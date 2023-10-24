@@ -1,4 +1,4 @@
-name: Report issue
+name: Report an issue
 description: Report an issue and help us improve Batocera (if using butterfly build, please add it in title)
 body:
   - type: input
@@ -20,7 +20,7 @@ body:
   - type: dropdown
     id: gpu_type
     attributes:
-      label: 
+      label: Your Graphic Processor Unit (GPU)
       description: Is your GPU integrated or dedicated ?
       options:
         - Integrated (e.g. Intel HD 550; RX Vega 8)
@@ -55,9 +55,10 @@ body:
     id: reproduce_issue
     attributes:
       label: Reproduction steps
-      description: 1. Note the steps in the order they are required to be done in order to successfully reproduce this issue.
-                   2. Include any “but only when” conditions you have discovered.
-                   3. Describe what happens when the issue occurs, anything to look out for, anything to check the issue has indeed occurred.
+      description: |
+        1. Note the steps in the order they are required to be done in order to successfully reproduce this issue.
+        2. Include any “but only when” conditions you have discovered.
+        3. Describe what happens when the issue occurs, anything to look out for, anything to check the issue has indeed occurred.
     validations:
       required: true
   - type: textarea
