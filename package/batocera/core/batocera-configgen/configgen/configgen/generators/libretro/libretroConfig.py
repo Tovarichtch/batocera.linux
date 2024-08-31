@@ -704,6 +704,10 @@ def createLibretroConfig(generator, system, controllers, metadata, guns, wheels,
     else:
         retroarchConfig['state_slot'] = '0'
 
+    # in case of the auto state_filename, do an autoload
+    if system.isOptSet('state_filename') and system.config['state_filename'][-5:] == ".auto":
+        retroarchConfig['savestate_auto_load'] = 'true'
+
     # Retroachievements option
     retroarchConfig['cheevos_enable'] = 'false'
     retroarchConfig['cheevos_hardcore_mode_enable'] = 'false'
@@ -821,6 +825,8 @@ def createLibretroConfig(generator, system, controllers, metadata, guns, wheels,
         if 'netplay.relay' in system.config and system.config['netplay.relay'] != "" and system.config['netplay.relay'] != "none" :
             retroarchConfig['netplay_use_mitm_server'] = "true"
             retroarchConfig['netplay_mitm_server'] = systemConfig.get('netplay.relay', "")
+            if system.config['netplay.relay'] == "custom" and system.isOptSet('netplay.customserver'):
+                retroarchConfig['netplay_custom_mitm_server'] = systemConfig.get('netplay.customserver', "")
         else:
             retroarchConfig['netplay_use_mitm_server'] = "false"
 

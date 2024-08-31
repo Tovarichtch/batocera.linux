@@ -532,7 +532,7 @@ msu-md:
   manufacturer: Sega
   release: 2020
   hardware: console
-  extensions: [md, zip, 7z]
+  extensions: [md, zip, 7z, squashfs]
   platform:   genesis, megadrive
   group:      megadrive
   emulators:
@@ -2282,7 +2282,7 @@ thextech:
   manufacturer: Wohlstand
   release: 2020
   hardware: port
-  extensions: [smbx]
+  extensions: [smbx, squashfs]
   emulators:
     thextech:
       thextech:  { requireAnyOf: [BR2_PACKAGE_THEXTECH] }
@@ -2705,7 +2705,7 @@ ikemen:
   manufacturer: Elecbyte
   release: 2021
   hardware: port
-  extensions: [ikemen, pc, squashfs]
+  extensions: [ikemen, pc]
   emulators:
     ikemen:
       ikemen:  { requireAnyOf: [BR2_PACKAGE_IKEMEN] }

@@ -83,10 +83,13 @@ class Pcsx2Generator(Generator):
             if not re.search(r'^flags\s*:.*\ssse4_1\W', cpuinfo.read(), re.MULTILINE):
                 eslog.warning("CPU does not support SSE4.1 which is required by pcsx2.  The emulator will likely crash with SIGILL (illegal instruction).")
 
-        envcmd = { "XDG_CONFIG_HOME":batoceraFiles.CONF,
-                   "QT_QPA_PLATFORM":"xcb",
-                   "SDL_JOYSTICK_HIDAPI": "0"
-                  }
+        # use their modified shaderc library
+        envcmd = {
+            "LD_LIBRARY_PATH": "/usr/stenzek-shaderc/lib:/usr/lib",
+            "XDG_CONFIG_HOME":batoceraFiles.CONF,
+            "QT_QPA_PLATFORM":"xcb",
+            "SDL_JOYSTICK_HIDAPI": "0"
+        }
 
         # wheels won't work correctly when SDL_GAMECONTROLLERCONFIG is set. excluding wheels from SDL_GAMECONTROLLERCONFIG doesn't fix too.
         # wheel metadata
@@ -99,6 +102,13 @@ class Pcsx2Generator(Generator):
         if not os.path.exists(pcsx2Patches):
             source_file = "/usr/share/batocera/datainit/bios/ps2/patches.zip"
             shutil.copy(source_file, pcsx2Patches)
+
+        # state_slot option
+        if system.isOptSet('state_filename'):
+            commandArray.extend(["-statefile", system.config['state_filename']])
+
+        if system.isOptSet('state_slot'):
+            commandArray.extend(["-stateindex", str(system.config['state_slot'])])
 
         return Command.Command(
             array=commandArray,
@@ -439,7 +449,17 @@ def configureINI(config_directory, bios_directory, system, rom, controllers, met
     if system.isOptSet('pcsx2_shaderset'):
         pcsx2INIConfig.set("EmuCore", "TVShader", system.config["pcsx2_shaderset"])
     else:
-        pcsx2INIConfig.set("EmuCore", "TVShader", "0")    
+        pcsx2INIConfig.set("EmuCore", "TVShader", "0")
+
+    if system.isOptSet('incrementalsavestates') and not system.getOptBoolean('incrementalsavestates'):
+        pcsx2INIConfig.set("EmuCore", "AutoIncrementSlot", "false")
+    else:
+        pcsx2INIConfig.set("EmuCore", "AutoIncrementSlot", "true")
+
+    if system.isOptSet('autosave') and system.getOptBoolean('autosave') == True:
+        pcsx2INIConfig.set("EmuCore", "SaveStateOnShutdown", "true")
+    else:
+        pcsx2INIConfig.set("EmuCore", "SaveStateOnShutdown", "false")
 
     ## [InputSources]
     if not pcsx2INIConfig.has_section("InputSources"):
