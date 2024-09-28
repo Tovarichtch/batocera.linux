@@ -1,12 +1,18 @@
-#!/usr/bin/env python
-import Command
-from generators.Generator import Generator
-import controllersConfig
 import os
 import shutil
-import batoceraFiles
+
+from ... import Command
+from ... import controllersConfig
+from ... import batoceraFiles
+from ..Generator import Generator
 
 class ETLegacyGenerator(Generator):
+
+    def getHotkeysContext(self):
+        return {
+            "name": "etlegacy",
+            "keys": { "exit": ["KEY_LEFTALT", "KEY_F4"], "menu": "KEY_ESC" }
+        }
 
     def generate(self, system, rom, playersControllers, metadata, guns, wheels, gameResolution):
 
@@ -23,7 +29,7 @@ class ETLegacyGenerator(Generator):
 
         if not os.path.exists(config_dir):
             os.makedirs(config_dir)
-        
+
         # Define the options to add or modify
         options_to_set = {
             "seta r_mode": "-1",
@@ -69,7 +75,7 @@ class ETLegacyGenerator(Generator):
         # copy mod files needed
         if not os.path.exists(etLegacyDir):
             os.makedirs(etLegacyDir)
-        
+
         # copy latest mod file to the rom directory
         if not os.path.exists(etLegacyDest):
             shutil.copy(etLegacySource, etLegacyDest)
@@ -78,16 +84,16 @@ class ETLegacyGenerator(Generator):
             destination_version = os.path.getmtime(etLegacyDest)
             if source_version > destination_version:
                 shutil.copy(etLegacySource, etLegacyDest)
-        
+
         commandArray = ["etl"]
-        
+
         return Command.Command(
             array=commandArray,
             env={
                 "SDL_GAMECONTROLLERCONFIG":controllersConfig.generateSdlGameControllerConfig(playersControllers)
             }
         )
-    
+
     # Show mouse for menu / play actions
     def getMouseMode(self, config, rom):
         return True

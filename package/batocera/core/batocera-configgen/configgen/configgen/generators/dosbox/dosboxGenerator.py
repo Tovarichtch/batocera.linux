@@ -1,9 +1,8 @@
-#!/usr/bin/env python
-import Command
-import batoceraFiles
-from generators.Generator import Generator
 import os.path
-import glob
+
+from ... import batoceraFiles
+from ... import Command
+from ..Generator import Generator
 
 
 class DosBoxGenerator(Generator):
@@ -15,11 +14,11 @@ class DosBoxGenerator(Generator):
         gameDir = rom
         batFile = gameDir + "/dosbox.bat"
         gameConfFile = gameDir + "/dosbox.cfg"
-           
+
         commandArray = [batoceraFiles.batoceraBins[system.config['emulator']],
 			"-fullscreen",
-			"-userconf", 
-			"-exit", 
+			"-userconf",
+			"-exit",
 			f"""{batFile}""",
 			"-c", f"""set ROOT={gameDir}"""]
         if os.path.isfile(gameConfFile):
@@ -30,3 +29,9 @@ class DosBoxGenerator(Generator):
             commandArray.append(f"""{batoceraFiles.dosboxConfig}""")
 
         return Command.Command(array=commandArray)
+
+    def getHotkeysContext(self):
+        return {
+            "name": "dosbox",
+            "keys": { "exit": ["KEY_LEFTCTRL", "KEY_F9"] }
+        }

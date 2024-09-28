@@ -1,9 +1,8 @@
-#!/usr/bin/env python
-
 import os
-import Command
-from generators.Generator import Generator
-import controllersConfig
+
+from ... import Command
+from ... import controllersConfig
+from ..Generator import Generator
 
 
 class DevilutionXGenerator(Generator):
@@ -30,3 +29,9 @@ class DevilutionXGenerator(Generator):
             env={
                 'SDL_GAMECONTROLLERCONFIG': controllersConfig.generateSdlGameControllerConfig(playersControllers)
             })
+
+    def getHotkeysContext(self):
+        return {
+            "name": "devilutionx",
+            "keys": { "exit": ["KEY_LEFTALT", "KEY_F4"], "menu": "KEY_ESC", "save_state": "KEY_F2", "restore_state": "KEY_F3" }
+        }

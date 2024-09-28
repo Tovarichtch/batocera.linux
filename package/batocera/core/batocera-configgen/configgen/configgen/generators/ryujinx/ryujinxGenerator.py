@@ -1,16 +1,15 @@
-#!/usr/bin/env python
-
-from generators.Generator import Generator
-import Command
 import os
 from os import environ
-import batoceraFiles
-import controllersConfig
 import filecmp
 import json
 import shutil
 import evdev
 from evdev import InputDevice
+
+from ... import batoceraFiles
+from ... import Command
+from ... import controllersConfig
+from ..Generator import Generator
 
 ryujinxConf = batoceraFiles.CONF + "/Ryujinx"
 ryujinxConfFile = ryujinxConf + "/Config.json"
@@ -76,6 +75,12 @@ ryujinxCtrl = {
 
 class RyujinxGenerator(Generator):
 
+    def getHotkeysContext(self):
+        return {
+            "name": "ryujinx",
+            "keys": { "exit": ["KEY_LEFTALT", "KEY_F4"] }
+        }
+
     def generate(self, system, rom, playersControllers, metadata, guns, wheels, gameResolution):
         if not os.path.exists(ryujinxConf):
             os.makedirs(ryujinxConf)
@@ -93,7 +98,7 @@ class RyujinxGenerator(Generator):
             if not os.path.exists(dest) or not filecmp.cmp(src, dest):
                 shutil.copyfile(src, dest)
                 os.chmod(dest, mode)
-        
+
         # Copy the prod.keys file to where ryujinx reads it
         if os.path.exists(ryujinxKeys):
             shutil.copyfile(ryujinxKeys, ryujinxConf + "/system/prod.keys")
@@ -124,12 +129,12 @@ class RyujinxGenerator(Generator):
             conf["system_language"] = system.config["ryujinx_language"]
         else:
             conf["system_language"] = "AmericanEnglish"
-        
+
         if system.isOptSet("ryujinx_region"):
             conf["system_region"] = system.config["ryujinx_region"]
         else:
-            conf["system_region"] = "USA"        
-        
+            conf["system_region"] = "USA"
+
         conf["system_time_zone"] = "UTC"
         if system.isOptSet("ryujinx_timeoffset"):
             conf["system_time_offset"] = int(system.config["ryujinx_timeoffset"])
@@ -151,7 +156,7 @@ class RyujinxGenerator(Generator):
             conf["aspect_ratio"] = system.config["ryujinx_ratio"]
         else:
             conf["aspect_ratio"] = "Fixed16x9"
-        
+
         if system.isOptSet("ryujinx_filtering"):
             conf["max_anisotropy"] = int(system.config["ryujinx_filtering"])
         else:
@@ -163,7 +168,7 @@ class RyujinxGenerator(Generator):
         js_out = json.dumps(conf, indent=2)
         with open(ryujinxConfFile, "w") as jout:
             jout.write(js_out)
-        
+
         # Now add Controllers
         nplayer = 1
         for controller, pad in sorted(playersControllers.items()):
@@ -220,7 +225,7 @@ def writeControllerIntoJson(new_controller, filename=ryujinxConfFile):
         file_data["input_config"].append(new_controller)
         file.seek(0)
         json.dump(file_data, file, indent=2)
- 
+
 def getLangFromEnvironment():
     lang = environ['LANG'][:5]
     availableLanguages = { "jp_JP": 0, "en_US": 1, "de_DE": 2,

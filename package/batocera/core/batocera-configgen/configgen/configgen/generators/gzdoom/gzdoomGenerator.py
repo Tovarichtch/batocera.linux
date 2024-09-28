@@ -1,20 +1,21 @@
-import batoceraFiles
-import Command
-from generators.Generator import Generator
 import os
 import shlex
+
+from ... import batoceraFiles
+from ... import Command
+from ..Generator import Generator
 
 def set_joystick_setting(ini_file, set_gz_joystick):
     with open(ini_file, "r") as file:
         lines = file.readlines()
-        
+
     joystick_line_found = False
     for i, line in enumerate(lines):
         if "use_joystick" in line:
             lines[i] = f"use_joystick={set_gz_joystick}\n"
             joystick_line_found = True
             break
-            
+
     if not joystick_line_found:
         if "[GlobalSettings]" not in lines:
             lines.append("[GlobalSettings]\n")
@@ -23,12 +24,18 @@ def set_joystick_setting(ini_file, set_gz_joystick):
             for i, line in enumerate(lines):
                 if line.strip() == "[GlobalSettings]":
                     lines.insert(i + 1, f"use_joystick={set_gz_joystick}\n")
-    
+
     with open(ini_file, "w") as file:
         file.writelines(lines)
 
 class GZDoomGenerator(Generator):
 
+    def getHotkeysContext(self):
+        return {
+            "name": "gzdoom",
+            "keys": { "exit": ["KEY_LEFTALT", "KEY_F4"] }
+        }
+    
     def generate(self, system, rom, playersControllers, metadata, guns, wheels, gameResolution):
         config_dir = f"{batoceraFiles.CONF}/gzdoom"
         ini_file = config_dir + "/gzdoom.ini"
@@ -36,7 +43,7 @@ class GZDoomGenerator(Generator):
         # check the path is added to the ini file
         fm_banks = "Path=/userdata/system/configs/gzdoom/fm_banks\n"
         sound_fonts = "Path=/userdata/system/configs/gzdoom/soundfonts\n"
-        
+
         # check directories exist
         if not os.path.exists(config_dir):
             os.mkdir(config_dir)
@@ -44,12 +51,12 @@ class GZDoomGenerator(Generator):
             os.mkdir(config_dir + "/soundfonts")
         if not os.path.exists(config_dir + "/fm_banks"):
             os.mkdir(config_dir + "/fm_banks")
-        
+
         if system.isOptSet("gz_api"):
             gzdoom_api = system.config["gz_api"]
         else:
             gzdoom_api = "0"
-        
+
         # RPi4 workaround which has both ligl & libgles
         # For arm systems, we want to force OpenGL ES - 3
         arch_path = "/usr/share/batocera/batocera.arch"
@@ -58,7 +65,7 @@ class GZDoomGenerator(Generator):
                 content = file.read().strip()
                 if not content == "x86_64":
                     gzdoom_api = "3"
-        
+
         # now set the config
         extra_config = ""
         if gzdoom_api == "3":
@@ -70,7 +77,7 @@ class GZDoomGenerator(Generator):
             )
         else:
             extra_config = (f"vid_preferbackend {gzdoom_api}\n")
-        
+
         # A script file with console commands that are always ran when a game starts
         script_file = f"{config_dir}/gzdoom.cfg"
         with open(script_file, "w") as script:
@@ -82,7 +89,7 @@ class GZDoomGenerator(Generator):
                 f"{extra_config}"
                 "echo BATOCERA\n"  # easy check that script ran in console
             )
-        
+
         rom_path = os.path.dirname(rom)
 
         # check the directory name is in the ini file
@@ -108,10 +115,10 @@ class GZDoomGenerator(Generator):
                             lines.insert(i+1, line_to_add)
                         if lines[i] == "[FileSearch.Directories]\n":
                             lines.insert(i+1, line_to_add)
-                
+
             with open(ini_file, "w") as file:
                 file.writelines(lines)
-                    
+
         # also check the config directories are also set
         with open(ini_file, "r") as file:
             lines = file.readlines()
@@ -119,23 +126,23 @@ class GZDoomGenerator(Generator):
                 for i in range(len(lines)):
                     if lines[i] == "[SoundfontSearch.Directories]\n":
                         lines.insert(i+1, fm_banks)
-                
+
             if sound_fonts not in lines:
                 for i in range(len(lines)):
                     if lines[i] == "[SoundfontSearch.Directories]\n":
                         lines.insert(i+1, sound_fonts)
-        
+
         with open(ini_file, "w") as file:
             file.writelines(lines)
-               
+
         if system.isOptSet("gz_joystick"):
             # Enable the joystick for configuration in GZDoom by the user currently
             set_gz_joystick = system.config["gz_joystick"]
         else:
             set_gz_joystick = "false"
-            
+
         set_joystick_setting(ini_file, set_gz_joystick)
-        
+
         # define how wads are loaded
         # if we use a custom extension use that instead
         if rom.endswith(".gzdoom"):

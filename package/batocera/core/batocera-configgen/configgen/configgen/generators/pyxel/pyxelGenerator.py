@@ -1,8 +1,8 @@
-#!/usr/bin/env python
-import Command
-from generators.Generator import Generator
-import controllersConfig
 import pathlib
+
+from ... import Command
+from ... import controllersConfig
+from ..Generator import Generator
 
 
 class PyxelGenerator(Generator):
@@ -11,11 +11,17 @@ class PyxelGenerator(Generator):
         if pathlib.Path(rom).suffix == '.pyxapp':
             cmd = 'play'
         else:
-            cmd = 'run' 
-	
+            cmd = 'run'
+
         commandArray = ["/usr/bin/pyxel", cmd, rom]
         return Command.Command(
             array=commandArray,
             env={
                 'SDL_GAMECONTROLLERCONFIG': controllersConfig.generateSdlGameControllerConfig(playersControllers)
             })
+
+    def getHotkeysContext(self):
+        return {
+            "name": "pyxel",
+            "keys": { "exit": "KEY_ESC" }
+        }

@@ -1,13 +1,9 @@
-#!/usr/bin/env python
-import Command
-import batoceraFiles
-from generators.Generator import Generator
 import os.path, shutil
-from os.path import dirname
-from os.path import isdir
-from os.path import isfile
-import glob
 import configparser
+
+from ... import Command
+from ... import batoceraFiles
+from ..Generator import Generator
 
 class DosBoxxGenerator(Generator):
 
@@ -44,7 +40,7 @@ class DosBoxxGenerator(Generator):
 
         # -fullscreen removed as it crashes on N2
         commandArray = [batoceraFiles.batoceraBins[system.config['emulator']],
-			"-exit", 
+			"-exit",
 			"-c", f"""mount c {gameDir}""",
                         "-c", "c:",
                         "-c", "dosbox.bat",
@@ -52,3 +48,9 @@ class DosBoxxGenerator(Generator):
                         f"-conf {customConfFile}"]
 
         return Command.Command(array=commandArray, env={"XDG_CONFIG_HOME":batoceraFiles.CONF})
+
+    def getHotkeysContext(self):
+        return {
+            "name": "dosboxx",
+            "keys": { "exit": ["KEY_LEFTCTRL", "KEY_F9"] }
+        }

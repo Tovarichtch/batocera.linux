@@ -1,26 +1,24 @@
-#!/usr/bin/env python
 import sys
 import os
-import batoceraFiles
-from . import libretroOptions
-from . import libretroMAMEConfig
-from Emulator import Emulator
-import settings
-from settings.unixSettings import UnixSettings
 import json
 import subprocess
-from utils.logger import get_logger
 from PIL import Image, ImageOps
-import utils.bezels as bezelsUtil
-import utils.videoMode as videoMode
-import controllersConfig
 import xml.etree.ElementTree as ET
+
+from ... import batoceraFiles
+from ... import controllersConfig
+from ...settings.unixSettings import UnixSettings
+from ...utils.logger import get_logger
+from ...utils import bezels as bezelsUtil
+from ...utils import videoMode as videoMode
+from . import libretroOptions
+from . import libretroMAMEConfig
 
 eslog = get_logger(__name__)
 sys.path.append(
     os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
 
-# Return value for es invertedbuttons    
+# Return value for es invertedbuttons
 def getInvertButtonsValue():
     try:
         tree = ET.parse(batoceraFiles.esSettings)
@@ -91,7 +89,7 @@ def connected_to_internet():
             eslog.error("Not connected to the internet")
             return False
 
-def writeLibretroConfig(generator, retroconfig, system, controllers, metadata, guns, wheels, rom, bezel, shaderBezel, gameResolution, gfxBackend):
+def writeLibretroConfig(generator, retroconfig: UnixSettings, system, controllers, metadata, guns, wheels, rom, bezel, shaderBezel, gameResolution, gfxBackend):
     writeLibretroConfigToFile(retroconfig, createLibretroConfig(generator, system, controllers, metadata, guns, wheels, rom, bezel, shaderBezel, gameResolution, gfxBackend))
 
 # Take a system, and returns a dict of retroarch.cfg compatible parameters
@@ -532,7 +530,7 @@ def createLibretroConfig(generator, system, controllers, metadata, guns, wheels,
         # If set manually, proritize that.
         # Otherwise, set to portrait for games listed as 90 degrees, manual (default) if not.
         if not system.isOptSet('wswan_rotate_display'):
-            wswanGameRotation = videoMode.getAltDecoration(system.name, rom, True)
+            wswanGameRotation = videoMode.getAltDecoration(system.name, rom, 'retroarch')
             if wswanGameRotation == "90":
                 wswanOrientation = "portrait"
             else:
@@ -955,21 +953,21 @@ def createLibretroConfig(generator, system, controllers, metadata, guns, wheels,
             # override core settings
             for key in raguncoreconf:
                 coreSettings.save(key, '"' + raguncoreconf[key] + '"')
-            
+
             # hide the mouse pointer with gun games
             retroarchConfig['input_overlay_show_mouse_cursor'] = "false"
     else:
         retroarchConfig['input_overlay_show_mouse_cursor'] = "true"
-    
+
     # write coreSettings a bit late while guns configs can modify it
     coreSettings.write()
 
     # Bezel option
     try:
-        writeBezelConfig(generator, bezel, shaderBezel, retroarchConfig, rom, gameResolution, system, controllersConfig.gunsBordersSizeName(guns, system.config))
+        writeBezelConfig(generator, bezel, shaderBezel, retroarchConfig, rom, gameResolution, system, controllersConfig.gunsBordersSizeName(guns, system.config), controllersConfig.gunsBorderRatioType(guns, system.config))
     except Exception as e:
         # error with bezels, disabling them
-        writeBezelConfig(generator, None, shaderBezel, retroarchConfig, rom, gameResolution, system, controllersConfig.gunsBordersSizeName(guns, system.config))
+        writeBezelConfig(generator, None, shaderBezel, retroarchConfig, rom, gameResolution, system, controllersConfig.gunsBordersSizeName(guns, system.config), controllersConfig.gunsBorderRatioType(guns, system.config))
         eslog.error(f"Error with bezel {bezel}: {e}")
 
     # custom : allow the user to configure directly retroarch.cfg via batocera.conf via lines like : snes.retroarch.menu_driver=rgui
@@ -1131,11 +1129,11 @@ def configureGunInputsForPlayer(n, gun, controllers, retroarchConfig, core, meta
                         retroarchConfig['input_player{}_{}_axis'.format(n, m)] = aval + pad.inputs[mapping[m]].id
         nplayer += 1
 
-def writeLibretroConfigToFile(retroconfig, config):
+def writeLibretroConfigToFile(retroconfig: UnixSettings, config):
     for setting in config:
         retroconfig.save(setting, config[setting])
 
-def writeBezelConfig(generator, bezel, shaderBezel, retroarchConfig, rom, gameResolution, system, gunsBordersSize):
+def writeBezelConfig(generator, bezel, shaderBezel, retroarchConfig, rom, gameResolution, system, gunsBordersSize, gunsBordersRatio):
     # disable the overlay
     # if all steps are passed, enable them
     retroarchConfig['input_overlay_hide_in_menu'] = "false"
@@ -1161,7 +1159,8 @@ def writeBezelConfig(generator, bezel, shaderBezel, retroarchConfig, rom, gameRe
 
         w = gameResolution["width"]
         h = gameResolution["height"]
-        h5 = bezelsUtil.gunsBorderSize(w, h)
+        innerSize, outerSize = bezelsUtil.gunBordersSize(gunsBordersSize)
+        h5 = bezelsUtil.gunsBorderSize(w, h, innerSize, outerSize)
 
         # could be better to compute the ratio while on ra it is forced to 4/3...
         ratio = generator.getInGameRatio(system.config, gameResolution, rom)
@@ -1170,7 +1169,7 @@ def writeBezelConfig(generator, bezel, shaderBezel, retroarchConfig, rom, gameRe
         bottom = h5
         right  = h5
         if ratio == 4/3:
-            left = (w - (h-2*h5)*4/3)//2
+            left = (w-(h*4/3)) // 2 + h5
             right = left
 
         with open(gunBezelInfoFile, "w") as fd:
@@ -1181,7 +1180,7 @@ def writeBezelConfig(generator, bezel, shaderBezel, retroarchConfig, rom, gameRe
     else:
         if bezel is None:
             return
-        bz_infos = bezelsUtil.getBezelInfos(rom, bezel, system.name, True)
+        bz_infos = bezelsUtil.getBezelInfos(rom, bezel, system.name, 'retroarch')
         if bz_infos is None:
             return
 
@@ -1359,7 +1358,7 @@ def writeBezelConfig(generator, bezel, shaderBezel, retroarchConfig, rom, gameRe
         eslog.debug("Draw gun borders")
         output_png_file = "/tmp/bezel_gunborders.png"
         innerSize, outerSize = bezelsUtil.gunBordersSize(gunsBordersSize)
-        borderSize = bezelsUtil.gunBorderImage(overlay_png_file, output_png_file, None, innerSize, outerSize, bezelsUtil.gunsBordersColorFomConfig(system.config))
+        borderSize = bezelsUtil.gunBorderImage(overlay_png_file, output_png_file, gunsBordersRatio, innerSize, outerSize, bezelsUtil.gunsBordersColorFomConfig(system.config))
         overlay_png_file = output_png_file
 
     eslog.debug(f"Bezel file set to {overlay_png_file}")

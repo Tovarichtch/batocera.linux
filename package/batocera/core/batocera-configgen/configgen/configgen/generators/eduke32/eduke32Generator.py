@@ -1,13 +1,21 @@
-import batoceraFiles
-import Command
 from configparser import ConfigParser
-import controllersConfig
-from generators.Generator import Generator
 import os
-from utils.buildargs import parse_args
+
+from ... import batoceraFiles
+from ... import Command
+from ... import controllersConfig
+from ...utils.buildargs import parse_args
+from ..Generator import Generator
 
 
 class EDuke32Generator(Generator):
+
+    def getHotkeysContext(self):
+        return {
+            "name": "eduke32",
+            "keys": { "exit": ["KEY_LEFTALT", "KEY_F4"], "menu": "KEY_ESC", "save_state": "KEY_F8", "restore_state": "KEY_F9" }
+        }
+
     def generate(self, system, rom, playersControllers, metadata, guns, wheels, gameResolution):
         # Core is either eduke32 or fury
         core = system.config["core"]

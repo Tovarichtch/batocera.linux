@@ -1,13 +1,20 @@
-#!/usr/bin/env python
+from __future__ import annotations
 
-import xml.etree.ElementTree as ET
-import batoceraFiles
 import os
-import pyudev
-import evdev
 import re
+import xml.etree.ElementTree as ET
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, TypeAlias
 
-from utils.logger import get_logger
+import evdev
+import pyudev
+
+from .batoceraPaths import BATOCERA_ES_DIR, ES_GAMES_METADATA, USER_ES_DIR
+from .utils.logger import get_logger
+
+if TYPE_CHECKING:
+    from pathlib import Path
+
 eslog = get_logger(__name__)
 
 
@@ -24,17 +31,32 @@ _DEFAULT_SDL_MAPPING = {
     'joystick2up': 'righty', 'joystick2left': 'rightx', 'hotkey': 'guide'
 }
 
+
 class Input:
-    def __init__(self, name, type, id, value, code):
+    def __init__(self, name: str, type: str, id: str, value: str, code: str) -> None:
         self.name = name
         self.type = type
         self.id = id
         self.value = value
         self.code = code
 
+InputMapping: TypeAlias = Mapping[str, Input]
+InputDict: TypeAlias = dict[str, Input]
+
 
 class Controller:
-    def __init__(self, configName, type, guid, player, index="-1", realName="", inputs=None, dev=None, nbbuttons=None, nbhats=None, nbaxes=None):
+    def __init__(
+        self,
+        configName: str,
+        type: str,
+        guid: str,
+        player: str | None,
+        index: int | str ="-1",
+        realName: str = "",
+        inputs: InputMapping | None = None,
+        dev: str | None = None,
+        nbbuttons: int | None = None, nbhats: int | None = None, nbaxes: int | None = None
+    ) -> None:
         self.type = type
         self.configName = configName
         self.index = index
@@ -45,43 +67,48 @@ class Controller:
         self.nbbuttons = nbbuttons
         self.nbhats = nbhats
         self.nbaxes = nbaxes
-        if inputs == None:
-            self.inputs = dict()
-        else:
-            self.inputs = inputs
+        self.inputs: InputDict = dict(inputs) if inputs is not None else dict()
 
     def generateSDLGameDBLine(self):
         return _generateSdlGameControllerConfig(self)
 
+ControllerMapping: TypeAlias = Mapping[str, Controller]
+ControllerDict: TypeAlias = dict[str, Controller]
+
+
 # Load all controllers from the es_input.cfg
 def loadAllControllersConfig():
     controllers = dict()
-    tree = ET.parse(batoceraFiles.esInputs)
-    root = tree.getroot()
-    for controller in root.findall(".//inputConfig"):
-        controllerInstance = Controller(controller.get("deviceName"), controller.get("type"),
-                                        controller.get("deviceGUID"), None, None)
-        uidname = controller.get("deviceGUID") + controller.get("deviceName")
-        controllers[uidname] = controllerInstance
-        for input in controller.findall("input"):
-            inputInstance = Input(input.get("name"), input.get("type"), input.get("id"), input.get("value"), input.get("code"))
-            controllerInstance.inputs[input.get("name")] = inputInstance
+    for conffile in [BATOCERA_ES_DIR / "es_input.cfg", USER_ES_DIR / 'es_input.cfg']:
+      if conffile.exists():
+          tree = ET.parse(conffile)
+          root = tree.getroot()
+          for controller in root.findall(".//inputConfig"):
+              controllerInstance = Controller(controller.get("deviceName"), controller.get("type"),
+                                              controller.get("deviceGUID"), None, None)
+              uidname = controller.get("deviceGUID") + controller.get("deviceName")
+              controllers[uidname] = controllerInstance
+              for input in controller.findall("input"):
+                  inputInstance = Input(input.get("name"), input.get("type"), input.get("id"), input.get("value"), input.get("code"))
+                  controllerInstance.inputs[input.get("name")] = inputInstance
     return controllers
 
 
 # Load all controllers from the es_input.cfg
 def loadAllControllersByNameConfig():
     controllers = dict()
-    tree = ET.parse(batoceraFiles.esInputs)
-    root = tree.getroot()
-    for controller in root.findall(".//inputConfig"):
-        controllerInstance = Controller(controller.get("deviceName"), controller.get("type"),
-                                        controller.get("deviceGUID"), None, None)
-        deviceName = controller.get("deviceName")
-        controllers[deviceName] = controllerInstance
-        for input in controller.findall("input"):
-            inputInstance = Input(input.get("name"), input.get("type"), input.get("id"), input.get("value"), input.get("code"))
-            controllerInstance.inputs[input.get("name")] = inputInstance
+    for conffile in [BATOCERA_ES_DIR / "es_input.cfg", USER_ES_DIR / 'es_input.cfg']:
+        if conffile.exists():
+            tree = ET.parse(conffile)
+            root = tree.getroot()
+            for controller in root.findall(".//inputConfig"):
+                controllerInstance = Controller(controller.get("deviceName"), controller.get("type"),
+                                                controller.get("deviceGUID"), None, None)
+                deviceName = controller.get("deviceName")
+                controllers[deviceName] = controllerInstance
+                for input in controller.findall("input"):
+                    inputInstance = Input(input.get("name"), input.get("type"), input.get("id"), input.get("value"), input.get("code"))
+                    controllerInstance.inputs[input.get("name")] = inputInstance
     return controllers
 
 
@@ -205,7 +232,7 @@ def generateSdlGameControllerConfig(controllers):
     return "\n".join(configs)
 
 
-def writeSDLGameDBAllControllers(controllers, outputFile = "/tmp/gamecontrollerdb.txt"):
+def writeSDLGameDBAllControllers(controllers, outputFile: str | Path = "/tmp/gamecontrollerdb.txt"):
     with open(outputFile, "w") as text_file:
         text_file.write(generateSdlGameControllerConfig(controllers))
     return outputFile
@@ -254,14 +281,8 @@ def gunsBordersSizeName(guns, config):
 
 # returns None to follow the bezel overlay size by default
 def gunsBorderRatioType(guns, config):
-    # add emulator specific configs here
-    if "m3_wideScreen" in config and config["m3_wideScreen"] == "1":
-        eslog.debug("Model 3 set to widescreen")
-        return None
-    else:
-        # check the display esolution is already 4:3
-        eslog.debug("Setting gun border ratio to 4:3")
-        return "4:3"
+    if "controllers.guns.bordersratio" in config:
+        return config["controllers.guns.bordersratio"] # "4:3"
     return None
 
 def getMouseButtons(device):
@@ -320,8 +341,9 @@ def mouseButtonToCode(button):
     return None
 
 def getGuns():
-    import pyudev
     import re
+
+    import pyudev
 
     guns = {}
     context = pyudev.Context()
@@ -381,7 +403,7 @@ def shortNameFromPath(path):
 
 def getGamesMetaData(system, rom):
     # load the database
-    tree = ET.parse(batoceraFiles.esGamesMetadata)
+    tree = ET.parse(ES_GAMES_METADATA)
     root = tree.getroot()
     game = shortNameFromPath(rom)
     res = {}

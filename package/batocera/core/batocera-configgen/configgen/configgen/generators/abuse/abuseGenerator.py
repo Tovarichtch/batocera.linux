@@ -1,8 +1,6 @@
-#!/usr/bin/env python
-
-import Command
-from generators.Generator import Generator
-import controllersConfig
+from ... import Command
+from ... import controllersConfig
+from ..Generator import Generator
 
 
 class AbuseGenerator(Generator):
@@ -15,3 +13,9 @@ class AbuseGenerator(Generator):
             env={
                 'SDL_GAMECONTROLLERCONFIG': controllersConfig.generateSdlGameControllerConfig(playersControllers)
             })
+
+    def getHotkeysContext(self):
+        return {
+            "name": "abuse",
+            "keys": { "exit": ["KEY_LEFTALT", "KEY_F4"] }
+        }

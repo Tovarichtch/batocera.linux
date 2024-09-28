@@ -1,10 +1,10 @@
-#!/usr/bin/env python
-
-import Command
-from generators.Generator import Generator
-import controllersConfig
 import os
-from utils.logger import get_logger
+
+from ... import Command
+from ... import controllersConfig
+from ...utils.logger import get_logger
+from ..Generator import Generator
+
 eslog = get_logger(__name__)
 
 class TyrianGenerator(Generator):
@@ -24,3 +24,9 @@ class TyrianGenerator(Generator):
 
     def getInGameRatio(self, config, gameResolution, rom):
         return 16/9
+
+    def getHotkeysContext(self):
+        return {
+            "name": "tyrian",
+            "keys": { "exit": ["KEY_LEFTALT", "KEY_F4"] }
+        }

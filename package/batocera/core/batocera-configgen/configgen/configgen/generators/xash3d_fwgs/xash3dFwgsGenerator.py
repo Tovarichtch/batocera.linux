@@ -1,13 +1,11 @@
-#!/usr/bin/env python
-
 import glob
 import os
 import re
 import shutil
 
-import Command
-from generators.Generator import Generator
-import controllersConfig
+from ... import Command
+from ... import controllersConfig
+from ..Generator import Generator
 
 _ROMS_DIR = '/userdata/roms/xash3d_fwgs'
 
@@ -83,6 +81,12 @@ def _get_arch_suffix():
 
 
 class Xash3dFwgsGenerator(Generator):
+
+    def getHotkeysContext(self):
+        return {
+            "name": "xash3dFwgs",
+            "keys": { "exit": "KEY_F10", "menu": "KEY_ESC", "save_state": "KEY_F6", "restore_state": "KEY_F7" }
+        }
 
     def generate(self, system, rom, playersControllers, metadata, guns, wheels, gameResolution):
         game = os.path.splitext(os.path.basename(rom))[0]
