@@ -196,6 +196,7 @@ PACKAGES_EMULATORS="amiberry
                     vice
                     vita3k
                     vpinball
+                    x16emu
                     xemu
                     xenia
                     xenia-canary"
@@ -226,6 +227,7 @@ PACKAGES_PORTS="abuse
                 sonic2013
                 soniccd
                 sonic-mania
+                taradino
                 theforceengine
                 tyrian
                 uqm
@@ -235,8 +237,7 @@ PACKAGES_PORTS="abuse
                 hlsdk-xash3d-opfor
                 xash3d-fwgs"
 
-PACKAGES_WINE="d8vk
-               dxvk
+PACKAGES_WINE="dxvk
                dxvk-nvapi
                faudio
                mf

@@ -439,7 +439,7 @@ msgctxt "game_options"
 msgid "Use light guns instead of pads if light guns are connected."
 msgstr "Gebruik Light Guns in plaats van pads als Light Guns verbonden zijn."
 
-#. TRANSLATION: shared, dolphin
+#. TRANSLATION: shared, dolphin, rpcs3
 msgctxt "game_options"
 msgid "LIGHT GUNS"
 msgstr "LIGHTGUNS"
@@ -4689,7 +4689,7 @@ msgctxt "game_options"
 msgid "Select which joystick to emulate."
 msgstr "Selecteer welke joystick u wilt emuleren."
 
-#. TRANSLATION: libretro/mame, cgenius, mame/pcsx2, iortcw
+#. TRANSLATION: libretro/mame, supermodel, cgenius, mame/pcsx2, iortcw
 msgctxt "game_options"
 msgid "None (Default)"
 msgstr "Geen (Standaard)"
@@ -8454,7 +8454,7 @@ msgctxt "game_options"
 msgid "UPSCALE FILTER"
 msgstr "UPSCALE FILTER"
 
-#. TRANSLATION: cemu, cemu, ppsspp, suyu
+#. TRANSLATION: cemu, cemu, ppsspp, supermodel, suyu
 msgctxt "game_options"
 msgid "Bicubic"
 msgstr "Bicubic"
@@ -8479,7 +8479,7 @@ msgctxt "game_options"
 msgid "DOWNSCALE FILTER"
 msgstr "DOWNSCALE FILTER"
 
-#. TRANSLATION: cemu, rpcs3
+#. TRANSLATION: cemu, rpcs3, supermodel
 msgctxt "game_options"
 msgid "Bilinear (Default)"
 msgstr "Bilinear (Standaard)"
@@ -9004,7 +9004,7 @@ msgctxt "game_options"
 msgid "USE PAD PROFILES"
 msgstr "GEBRUIK CONTROLLER PROFIELEN"
 
-#. TRANSLATION: dolphin
+#. TRANSLATION: dolphin, rpcs3, rpcs3, rpcs3, rpcs3, ...
 msgctxt "game_options"
 msgid "Enable controller rumble capabilities if supported by the controller."
 msgstr ""
@@ -11727,10 +11727,10 @@ msgstr ""
 "Standaard wordt SDL2 gebruikt, schakel anders controller specifieke "
 "mogelijkheden in. Sony DS werkt niet met klooncontrollers."
 
-#. TRANSLATION: rpcs3
+#. TRANSLATION: rpcs3, rpcs3, rpcs3, rpcs3, rpcs3, ...
 msgctxt "game_options"
-msgid "PS3 CONTROLLER 1"
-msgstr "PS3 CONTROLLER 1"
+msgid "PS3 CONTROLLER"
+msgstr ""
 
 #. TRANSLATION: rpcs3, rpcs3, rpcs3, rpcs3, rpcs3, ...
 msgctxt "game_options"
@@ -11742,35 +11742,20 @@ msgctxt "game_options"
 msgid "Sony DS"
 msgstr "Sony DS"
 
-#. TRANSLATION: rpcs3
+#. TRANSLATION: rpcs3, rpcs3
 msgctxt "game_options"
-msgid "PS3 CONTROLLER 2"
-msgstr "PS3 CONTROLLER 2"
+msgid "CONTROLLER 5"
+msgstr ""
 
-#. TRANSLATION: rpcs3
+#. TRANSLATION: rpcs3, rpcs3
 msgctxt "game_options"
-msgid "PS3 CONTROLLER 3"
-msgstr "PS3 CONTROLLER 3"
+msgid "CONTROLLER 6"
+msgstr ""
 
-#. TRANSLATION: rpcs3
+#. TRANSLATION: rpcs3, rpcs3
 msgctxt "game_options"
-msgid "PS3 CONTROLLER 4"
-msgstr "PS3 CONTROLLER 4"
-
-#. TRANSLATION: rpcs3
-msgctxt "game_options"
-msgid "PS3 CONTROLLER 5"
-msgstr "PS3 CONTROLLER 5"
-
-#. TRANSLATION: rpcs3
-msgctxt "game_options"
-msgid "PS3 CONTROLLER 6"
-msgstr "PS3 CONTROLLER 6"
-
-#. TRANSLATION: rpcs3
-msgctxt "game_options"
-msgid "PS3 CONTROLLER 7"
-msgstr "PS3 CONTROLLER 7"
+msgid "CONTROLLER 7"
+msgstr ""
 
 #. TRANSLATION: scummvm
 msgctxt "game_options"
@@ -12118,6 +12103,61 @@ msgstr "QUAD RENDEREN"
 
 #. TRANSLATION: supermodel
 msgctxt "game_options"
+msgid "CRT-like colour adaption. Requires New 3D engine."
+msgstr ""
+
+#. TRANSLATION: supermodel
+msgctxt "game_options"
+msgid "CRT COLOUR"
+msgstr ""
+
+#. TRANSLATION: supermodel
+msgctxt "game_options"
+msgid "ARI/D93 (recommended for all JP developed games)"
+msgstr ""
+
+#. TRANSLATION: supermodel
+msgctxt "game_options"
+msgid "PVM_20M2U/D93"
+msgstr ""
+
+#. TRANSLATION: supermodel
+msgctxt "game_options"
+msgid "BT601_525/D93"
+msgstr ""
+
+#. TRANSLATION: supermodel
+msgctxt "game_options"
+msgid "BT601_525/D65 (recommended for all US developed games)"
+msgstr ""
+
+#. TRANSLATION: supermodel
+msgctxt "game_options"
+msgid "BT601_625/D65 (recommended for all EUR/AUS developed games)"
+msgstr ""
+
+#. TRANSLATION: supermodel
+msgctxt "game_options"
+msgid "Upscale filter used for the 2D layers. Requires New 3D engine."
+msgstr ""
+
+#. TRANSLATION: supermodel
+msgctxt "game_options"
+msgid "UPSCALE MODE"
+msgstr ""
+
+#. TRANSLATION: supermodel
+msgctxt "game_options"
+msgid "None/Sharp Pixels"
+msgstr ""
+
+#. TRANSLATION: supermodel
+msgctxt "game_options"
+msgid "Biquintic"
+msgstr ""
+
+#. TRANSLATION: supermodel
+msgctxt "game_options"
 msgid "Enable crosshairs in shooting games for the selected players."
 msgstr "Vizier in schiet spellen voor de geselecteerde spelers inschakelen."
 
@@ -12188,7 +12228,7 @@ msgctxt "game_options"
 msgid "Choose your preferred aspect ratio.."
 msgstr "Kies de gewenste beeldverhouding.."
 
-#. TRANSLATION: cgenius
+#. TRANSLATION: cgenius, x16emu
 msgctxt "game_options"
 msgid "4x3 (Default)"
 msgstr "4x3 (Standaard)"
@@ -15181,145 +15221,335 @@ msgctxt "game_options"
 msgid "TRIPLE BUFFERING"
 msgstr "Drievoudige Buffering"
 
-#. TRANSLATION: jaguar.bigpemu.keys, cave3rd.demul.keys, dreamcast.demul.keys, gaelco.demul.keys, hikaru.demul.keys, ...
+#. TRANSLATION: x16emu
+msgctxt "game_options"
+msgid "Enhancement. Increase the rendering resolution."
+msgstr ""
+
+#. TRANSLATION: x16emu
+msgctxt "game_options"
+msgid "1280x960 (Default)"
+msgstr ""
+
+#. TRANSLATION: x16emu
+msgctxt "game_options"
+msgid "Change image scaling algorithm quality."
+msgstr ""
+
+#. TRANSLATION: x16emu
+msgctxt "game_options"
+msgid "IMAGE QUALITY"
+msgstr ""
+
+#. TRANSLATION: x16emu
+msgctxt "game_options"
+msgid "Nearest pixel sampling"
+msgstr ""
+
+#. TRANSLATION: x16emu
+msgctxt "game_options"
+msgid "Linear filtering"
+msgstr ""
+
+#. TRANSLATION: x16emu
+msgctxt "game_options"
+msgid "Anisotropic filtering"
+msgstr ""
+
+#. TRANSLATION: steam.keys
+msgctxt "keys_files"
+msgid "Exit Steam"
+msgstr "Sluit Steam af"
+
+#. TRANSLATION: flatpak.keys
+msgctxt "keys_files"
+msgid "Exit running Flatpak"
+msgstr "Stop het draaien van Flatpak"
+
+#. TRANSLATION: raze.keys, gzdoom.keys, eduke32.keys
+msgctxt "keys_files"
+msgid "quicksave"
+msgstr "snel opslaan"
+
+#. TRANSLATION: raze.keys, gzdoom.keys, eduke32.keys
+msgctxt "keys_files"
+msgid "quickload"
+msgstr "snellaad"
+
+#. TRANSLATION: raze.keys, gzdoom.keys, eduke32.keys
+msgctxt "keys_files"
+msgid "screenshot"
+msgstr "screenshot"
+
+#. TRANSLATION: dxx-rebirth.keys, fallout2-ce.keys, fallout1-ce.keys, etlegacy.keys, sonic-mania.keys, ...
+msgctxt "keys_files"
+msgid "Exit game"
+msgstr "Stop spel"
+
+#. TRANSLATION: fallout2-ce.keys, fallout1-ce.keys
+msgctxt "keys_files"
+msgid "Bring up menu"
+msgstr "Toon menu"
+
+#. TRANSLATION: fallout2-ce.keys, fallout1-ce.keys, iortcw.keys, corsixth.keys
+msgctxt "keys_files"
+msgid "Quick save"
+msgstr "Snel opslaan"
+
+#. TRANSLATION: fallout2-ce.keys, fallout1-ce.keys, iortcw.keys, corsixth.keys
+msgctxt "keys_files"
+msgid "Quick load"
+msgstr "Snel laden"
+
+#. TRANSLATION: iortcw.keys, theforceengine.keys
+msgctxt "keys_files"
+msgid "Skip cutscene"
+msgstr "Sla cutscene over"
+
+#. TRANSLATION: iortcw.keys, triforce.dolphin_triforce.keys, psx.duckstation.keys, 3ds.citra.keys, psp.ppsspp.keys, ...
+msgctxt "keys_files"
+msgid "Screenshot"
+msgstr "Screenshot"
+
+#. TRANSLATION: rott.keys, theforceengine.keys, dreamcast.redream.keys, cave3rd.demul.keys, dreamcast.demul.keys, ...
 msgctxt "keys_files"
 msgid "Exit the emulator"
 msgstr "Verlaat de emulator"
 
-#. TRANSLATION: jaguar.bigpemu.keys
+#. TRANSLATION: rott.keys
 msgctxt "keys_files"
-msgid "Configuration menu"
-msgstr "Configuratiemenu"
+msgid "Open door"
+msgstr ""
 
-#. TRANSLATION: wiiu.keys, triforce.dolphin_triforce.keys, naomi2.flycast.keys, atomiswave.flycast.keys, dreamcast.flycast.keys, ...
+#. TRANSLATION: rott.keys
+msgctxt "keys_files"
+msgid "Toggle weapon"
+msgstr ""
+
+#. TRANSLATION: rott.keys
+msgctxt "keys_files"
+msgid "Drop weapon"
+msgstr ""
+
+#. TRANSLATION: rott.keys
+msgctxt "keys_files"
+msgid "Aim up"
+msgstr ""
+
+#. TRANSLATION: rott.keys
+msgctxt "keys_files"
+msgid "Aim down"
+msgstr ""
+
+#. TRANSLATION: rott.keys
+msgctxt "keys_files"
+msgid "Strafe left"
+msgstr ""
+
+#. TRANSLATION: rott.keys
+msgctxt "keys_files"
+msgid "Strafe right"
+msgstr ""
+
+#. TRANSLATION: rott.keys
+msgctxt "keys_files"
+msgid "Run"
+msgstr ""
+
+#. TRANSLATION: rott.keys
+msgctxt "keys_files"
+msgid "Fire"
+msgstr ""
+
+#. TRANSLATION: rott.keys
+msgctxt "keys_files"
+msgid "Menu back"
+msgstr ""
+
+#. TRANSLATION: rott.keys
+msgctxt "keys_files"
+msgid "Move left"
+msgstr ""
+
+#. TRANSLATION: rott.keys
+msgctxt "keys_files"
+msgid "Move right"
+msgstr ""
+
+#. TRANSLATION: rott.keys
+msgctxt "keys_files"
+msgid "Move forward"
+msgstr ""
+
+#. TRANSLATION: rott.keys
+msgctxt "keys_files"
+msgid "Move backward"
+msgstr ""
+
+#. TRANSLATION: rott.keys
+msgctxt "keys_files"
+msgid "Toggle run"
+msgstr ""
+
+#. TRANSLATION: corsixth.keys
+msgctxt "keys_files"
+msgid "Move camera up"
+msgstr "Beweeg camera omhoog"
+
+#. TRANSLATION: corsixth.keys
+msgctxt "keys_files"
+msgid "Move camera down"
+msgstr "Beweeg camera omlaag"
+
+#. TRANSLATION: corsixth.keys
+msgctxt "keys_files"
+msgid "Move camera to the left"
+msgstr "Beweeg camera naar links"
+
+#. TRANSLATION: corsixth.keys
+msgctxt "keys_files"
+msgid "Move camera to the right"
+msgstr "Beweeg camera naar rechts"
+
+#. TRANSLATION: corsixth.keys
+msgctxt "keys_files"
+msgid "Quit the application"
+msgstr "Stop de applicatie"
+
+#. TRANSLATION: corsixth.keys
+msgctxt "keys_files"
+msgid "Start / Valid"
+msgstr "Begin / Geldig"
+
+#. TRANSLATION: corsixth.keys
+msgctxt "keys_files"
+msgid "Shows or hides the menu bar"
+msgstr "Toont of verbergt de menubalk"
+
+#. TRANSLATION: corsixth.keys
+msgctxt "keys_files"
+msgid "Rotates the current object"
+msgstr "Roteert het huidige object"
+
+#. TRANSLATION: corsixth.keys
+msgctxt "keys_files"
+msgid "Select"
+msgstr "Selecteer"
+
+#. TRANSLATION: corsixth.keys
+msgctxt "keys_files"
+msgid "Zoom in x5"
+msgstr "Zoom in x5"
+
+#. TRANSLATION: corsixth.keys
+msgctxt "keys_files"
+msgid "Zoom out x5"
+msgstr "Zoom uit x5"
+
+#. TRANSLATION: corsixth.keys
+msgctxt "keys_files"
+msgid "Take a screenshot"
+msgstr "Maak een screenshot"
+
+#. TRANSLATION: corsixth.keys
+msgctxt "keys_files"
+msgid "Reset the application"
+msgstr "Reset de applicatie"
+
+#. TRANSLATION: corsixth.keys
+msgctxt "keys_files"
+msgid "Hire staff"
+msgstr "Huur personeel"
+
+#. TRANSLATION: corsixth.keys
+msgctxt "keys_files"
+msgid "Edit room"
+msgstr "Bewerk kamer"
+
+#. TRANSLATION: corsixth.keys
+msgctxt "keys_files"
+msgid "Open build room menu"
+msgstr "Open bouw kamer menu"
+
+#. TRANSLATION: corsixth.keys
+msgctxt "keys_files"
+msgid "Open furnish corridor menu"
+msgstr "Open het menu voor het inrichten van de gang"
+
+#. TRANSLATION: corsixth.keys
+msgctxt "keys_files"
+msgid "Quits the current level"
+msgstr "Sluit het huidige niveau af"
+
+#. TRANSLATION: corsixth.keys
+msgctxt "keys_files"
+msgid "Speeds up the game"
+msgstr "Versnel het spel"
+
+#. TRANSLATION: corsixth.keys
+msgctxt "keys_files"
+msgid "Set speed normal"
+msgstr "Zet snelheid op normaal"
+
+#. TRANSLATION: corsixth.keys
+msgctxt "keys_files"
+msgid "Show the cheat menu"
+msgstr "Toon het cheat menu"
+
+#. TRANSLATION: corsixth.keys
+msgctxt "keys_files"
+msgid "Zoom the camera out"
+msgstr "Zoom de camera uit"
+
+#. TRANSLATION: corsixth.keys
+msgctxt "keys_files"
+msgid "Zoom in the camera"
+msgstr "Zoom de camera in"
+
+#. TRANSLATION: corsixth.keys
+msgctxt "keys_files"
+msgid "Open LUA console"
+msgstr "Open de LUA console"
+
+#. TRANSLATION: corsixth.keys
+msgctxt "keys_files"
+msgid "Town map"
+msgstr "Stadsplattegrond"
+
+#. TRANSLATION: corsixth.keys
+msgctxt "keys_files"
+msgid "Casebook"
+msgstr "Casebook"
+
+#. TRANSLATION: corsixth.keys
+msgctxt "keys_files"
+msgid "Research"
+msgstr "Onderzoek"
+
+#. TRANSLATION: corsixth.keys
+msgctxt "keys_files"
+msgid "Manage Staff"
+msgstr "Beheer personeel"
+
+#. TRANSLATION: theforceengine.keys
+msgctxt "keys_files"
+msgid "Quick Load"
+msgstr "Snel Laden"
+
+#. TRANSLATION: theforceengine.keys
+msgctxt "keys_files"
+msgid "Quick Save"
+msgstr "Snel Opslaan"
+
+#. TRANSLATION: dreamcast.redream.keys, dreamcast.flycast.keys, naomi2.flycast.keys, naomi.flycast.keys, atomiswave.flycast.keys
+msgctxt "keys_files"
+msgid "Hide the bezel"
+msgstr "Verberg de omlijsting"
+
+#. TRANSLATION: xbox360.xenia.keys, triforce.dolphin_triforce.keys, ps2.pcsx2.keys, singe.hypseus-singe.keys, daphne.hypseus-singe.keys, ...
 msgctxt "keys_files"
 msgid "Exit emulator"
 msgstr "Verlaat emulator"
-
-#. TRANSLATION: wiiu.keys
-msgctxt "keys_files"
-msgid "Display the controller screen"
-msgstr "Laat het controller scherm zien"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, gaelco.demul.keys, hikaru.demul.keys, naomi.demul.keys, ...
-msgctxt "keys_files"
-msgid "Start"
-msgstr "Start"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, gaelco.demul.keys, hikaru.demul.keys, naomi.demul.keys, ...
-msgctxt "keys_files"
-msgid "Coin"
-msgstr "Munt"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, gaelco.demul.keys, hikaru.demul.keys, naomi.demul.keys, ...
-msgctxt "keys_files"
-msgid "Push 2"
-msgstr "Druk 2"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, gaelco.demul.keys, hikaru.demul.keys, naomi.demul.keys, ...
-msgctxt "keys_files"
-msgid "Push 1"
-msgstr "Druk 1"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, gaelco.demul.keys, hikaru.demul.keys, naomi.demul.keys, ...
-msgctxt "keys_files"
-msgid "Push 4"
-msgstr "Druk 4"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, gaelco.demul.keys, hikaru.demul.keys, naomi.demul.keys, ...
-msgctxt "keys_files"
-msgid "Push 3"
-msgstr "Druk 3"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, gaelco.demul.keys, hikaru.demul.keys, naomi.demul.keys, ...
-msgctxt "keys_files"
-msgid "Push 5"
-msgstr "Druk 5"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, gaelco.demul.keys, hikaru.demul.keys, naomi.demul.keys, ...
-msgctxt "keys_files"
-msgid "Push 6"
-msgstr "Druk 6"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, gaelco.demul.keys, hikaru.demul.keys, naomi.demul.keys, ...
-msgctxt "keys_files"
-msgid "Push 7"
-msgstr "Druk 7"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, gaelco.demul.keys, hikaru.demul.keys, naomi.demul.keys, ...
-msgctxt "keys_files"
-msgid "Push 8"
-msgstr "Druk 8"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, gaelco.demul.keys, hikaru.demul.keys, naomi.demul.keys, ...
-msgctxt "keys_files"
-msgid "Digital Left"
-msgstr "Digitaal Links"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, gaelco.demul.keys, hikaru.demul.keys, naomi.demul.keys, ...
-msgctxt "keys_files"
-msgid "Digital Right"
-msgstr "Digitaal Rechts"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, gaelco.demul.keys, hikaru.demul.keys, naomi.demul.keys, ...
-msgctxt "keys_files"
-msgid "Digital Up"
-msgstr "Digitaal Omhoog"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, gaelco.demul.keys, hikaru.demul.keys, naomi.demul.keys, ...
-msgctxt "keys_files"
-msgid "Digital Down"
-msgstr "Digitaal Omlaag"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, gaelco.demul.keys, hikaru.demul.keys, naomi.demul.keys, ...
-msgctxt "keys_files"
-msgid "Analog 1 Left"
-msgstr "Analoog 1 Links"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, gaelco.demul.keys, hikaru.demul.keys, naomi.demul.keys, ...
-msgctxt "keys_files"
-msgid "Analog 1 Right"
-msgstr "Analoog 1 Rechts"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, gaelco.demul.keys, hikaru.demul.keys, naomi.demul.keys, ...
-msgctxt "keys_files"
-msgid "Analog 1 Up"
-msgstr "Analoog 1 Omhoog"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, gaelco.demul.keys, hikaru.demul.keys, naomi.demul.keys, ...
-msgctxt "keys_files"
-msgid "Analog 1 Down"
-msgstr "Analoog 1 Omlaag"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, gaelco.demul.keys, hikaru.demul.keys, naomi.demul.keys, ...
-msgctxt "keys_files"
-msgid "Analog 2 Left"
-msgstr "Analoog 2 Links"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, gaelco.demul.keys, hikaru.demul.keys, naomi.demul.keys, ...
-msgctxt "keys_files"
-msgid "Analog 2 Right"
-msgstr "Analoog 2 Rechts"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, gaelco.demul.keys, hikaru.demul.keys, naomi.demul.keys, ...
-msgctxt "keys_files"
-msgid "Analog 2 Up"
-msgstr "Analoog 2 Omhoog"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, gaelco.demul.keys, hikaru.demul.keys, naomi.demul.keys, ...
-msgctxt "keys_files"
-msgid "Analog 2 Down"
-msgstr "Analoog 2 Omlaag"
-
-#. TRANSLATION: gaelco.demul.keys, hikaru.demul.keys
-msgctxt "keys_files"
-msgid "Set to full screen"
-msgstr "Instellen op volledig scherm"
-
-#. TRANSLATION: wii.dolphin.keys
-msgctxt "keys_files"
-msgid "Exit Dolphin"
-msgstr "Verlaat Dolphin"
 
 #. TRANSLATION: triforce.dolphin_triforce.keys
 msgctxt "keys_files"
@@ -15336,150 +15566,20 @@ msgctxt "keys_files"
 msgid "Save State Slot 1"
 msgstr "Save State Slot 1"
 
-#. TRANSLATION: triforce.dolphin_triforce.keys, psx.duckstation.keys, psp.ppsspp.keys, mame.keys, scummvm.keys, ...
-msgctxt "keys_files"
-msgid "Screenshot"
-msgstr "Screenshot"
-
-#. TRANSLATION: dos.dosbox-x.keys
-msgctxt "keys_files"
-msgid "Exit Dosbox-X"
-msgstr "Sluit Dosbox-X"
-
-#. TRANSLATION: nds.drastic.keys
-msgctxt "keys_files"
-msgid "Joy2Pad Up"
-msgstr "Joy2Pad Omhoog"
-
-#. TRANSLATION: nds.drastic.keys
-msgctxt "keys_files"
-msgid "Joy2Pad Down"
-msgstr "Joy2Pad Omlaag"
-
-#. TRANSLATION: nds.drastic.keys
-msgctxt "keys_files"
-msgid "Joy2Pad Left"
-msgstr "Joy2Pad Links"
-
-#. TRANSLATION: nds.drastic.keys
-msgctxt "keys_files"
-msgid "Joy2Pad Right"
-msgstr "Joy2Pad Rechts"
-
-#. TRANSLATION: nds.drastic.keys
-msgctxt "keys_files"
-msgid "Hat Up"
-msgstr "Hat Omhoog"
-
-#. TRANSLATION: nds.drastic.keys
-msgctxt "keys_files"
-msgid "Hat Down"
-msgstr "Hat Omlaag"
-
-#. TRANSLATION: nds.drastic.keys
-msgctxt "keys_files"
-msgid "Hat Left"
-msgstr "Hat Links"
-
-#. TRANSLATION: nds.drastic.keys
-msgctxt "keys_files"
-msgid "Hat Right"
-msgstr "Hat Rechts"
-
-#. TRANSLATION: nds.drastic.keys
-msgctxt "keys_files"
-msgid "Button A"
-msgstr "Knop A"
-
-#. TRANSLATION: nds.drastic.keys
-msgctxt "keys_files"
-msgid "Button B"
-msgstr "Knop B"
-
-#. TRANSLATION: nds.drastic.keys
-msgctxt "keys_files"
-msgid "Button X"
-msgstr "Knop X"
-
-#. TRANSLATION: nds.drastic.keys
-msgctxt "keys_files"
-msgid "Button Y"
-msgstr "Knop Y"
-
-#. TRANSLATION: nds.drastic.keys
-msgctxt "keys_files"
-msgid "Button Start"
-msgstr "Knop Start"
-
-#. TRANSLATION: nds.drastic.keys
-msgctxt "keys_files"
-msgid "Button Select"
-msgstr "Knop Select"
-
-#. TRANSLATION: nds.drastic.keys
-msgctxt "keys_files"
-msgid "Button L"
-msgstr "Knop L"
-
-#. TRANSLATION: nds.drastic.keys
-msgctxt "keys_files"
-msgid "Button R"
-msgstr "Knop R"
-
-#. TRANSLATION: nds.drastic.keys
-msgctxt "keys_files"
-msgid "Disposition A"
-msgstr "Disposition A"
-
-#. TRANSLATION: nds.drastic.keys
-msgctxt "keys_files"
-msgid "Disposition B"
-msgstr "Disposition B"
-
-#. TRANSLATION: nds.drastic.keys
-msgctxt "keys_files"
-msgid "Microphone"
-msgstr "Microfoon"
-
-#. TRANSLATION: nds.drastic.keys
-msgctxt "keys_files"
-msgid "TouchScreen"
-msgstr "Touch Screen"
-
-#. TRANSLATION: nds.drastic.keys
-msgctxt "keys_files"
-msgid "Exit Drastic"
-msgstr "Verlaat Drastic"
-
-#. TRANSLATION: nds.drastic.keys, psx.duckstation.keys, psp.ppsspp.keys, mame.keys
-msgctxt "keys_files"
-msgid "Save State"
-msgstr "Sla Staat Op"
-
-#. TRANSLATION: nds.drastic.keys, psx.duckstation.keys, psp.ppsspp.keys, mame.keys
-msgctxt "keys_files"
-msgid "Load State"
-msgstr "Laad Staat"
-
-#. TRANSLATION: nds.drastic.keys
-msgctxt "keys_files"
-msgid "Swap Screens"
-msgstr "Verwissel Schermen"
-
-#. TRANSLATION: nds.drastic.keys
-msgctxt "keys_files"
-msgid "QuickMenu"
-msgstr "SnelMenu"
-
-#. TRANSLATION: nds.drastic.keys
-msgctxt "keys_files"
-msgid "FastForward"
-msgstr "Vooruitspoelen"
-
 #. TRANSLATION: psx.duckstation.keys
 msgctxt "keys_files"
 msgid "Exit Duckstation"
 msgstr "Verlaat Duckstation"
+
+#. TRANSLATION: psx.duckstation.keys, psp.ppsspp.keys, nds.drastic.keys, mame.keys
+msgctxt "keys_files"
+msgid "Load State"
+msgstr "Laad Staat"
+
+#. TRANSLATION: psx.duckstation.keys, psp.ppsspp.keys, nds.drastic.keys, mame.keys
+msgctxt "keys_files"
+msgid "Save State"
+msgstr "Sla Staat Op"
 
 #. TRANSLATION: psx.duckstation.keys
 msgctxt "keys_files"
@@ -15516,45 +15616,135 @@ msgctxt "keys_files"
 msgid "Fast Forward"
 msgstr "Vooruitspoelen"
 
-#. TRANSLATION: naomi2.flycast.keys, atomiswave.flycast.keys, dreamcast.flycast.keys, naomi.flycast.keys, dreamcast.redream.keys
+#. TRANSLATION: singe.hypseus-singe.keys, daphne.hypseus-singe.keys
 msgctxt "keys_files"
-msgid "Hide the bezel"
-msgstr "Verberg de omlijsting"
+msgid "Service menu"
+msgstr "Servicemenu"
 
-#. TRANSLATION: amiga1200.fsuae.keys, amiga500.fsuae.keys, amigacd32.fsuae.keys, amigacdtv.fsuae.keys
+#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
+msgctxt "keys_files"
+msgid "Start"
+msgstr "Start"
+
+#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
+msgctxt "keys_files"
+msgid "Coin"
+msgstr "Munt"
+
+#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
+msgctxt "keys_files"
+msgid "Push 2"
+msgstr "Druk 2"
+
+#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
+msgctxt "keys_files"
+msgid "Push 1"
+msgstr "Druk 1"
+
+#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
+msgctxt "keys_files"
+msgid "Push 4"
+msgstr "Druk 4"
+
+#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
+msgctxt "keys_files"
+msgid "Push 3"
+msgstr "Druk 3"
+
+#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
+msgctxt "keys_files"
+msgid "Push 5"
+msgstr "Druk 5"
+
+#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
+msgctxt "keys_files"
+msgid "Push 6"
+msgstr "Druk 6"
+
+#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
+msgctxt "keys_files"
+msgid "Push 7"
+msgstr "Druk 7"
+
+#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
+msgctxt "keys_files"
+msgid "Push 8"
+msgstr "Druk 8"
+
+#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
+msgctxt "keys_files"
+msgid "Digital Left"
+msgstr "Digitaal Links"
+
+#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
+msgctxt "keys_files"
+msgid "Digital Right"
+msgstr "Digitaal Rechts"
+
+#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
+msgctxt "keys_files"
+msgid "Digital Up"
+msgstr "Digitaal Omhoog"
+
+#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
+msgctxt "keys_files"
+msgid "Digital Down"
+msgstr "Digitaal Omlaag"
+
+#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
+msgctxt "keys_files"
+msgid "Analog 1 Left"
+msgstr "Analoog 1 Links"
+
+#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
+msgctxt "keys_files"
+msgid "Analog 1 Right"
+msgstr "Analoog 1 Rechts"
+
+#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
+msgctxt "keys_files"
+msgid "Analog 1 Up"
+msgstr "Analoog 1 Omhoog"
+
+#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
+msgctxt "keys_files"
+msgid "Analog 1 Down"
+msgstr "Analoog 1 Omlaag"
+
+#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
+msgctxt "keys_files"
+msgid "Analog 2 Left"
+msgstr "Analoog 2 Links"
+
+#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
+msgctxt "keys_files"
+msgid "Analog 2 Right"
+msgstr "Analoog 2 Rechts"
+
+#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
+msgctxt "keys_files"
+msgid "Analog 2 Up"
+msgstr "Analoog 2 Omhoog"
+
+#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
+msgctxt "keys_files"
+msgid "Analog 2 Down"
+msgstr "Analoog 2 Omlaag"
+
+#. TRANSLATION: hikaru.demul.keys, gaelco.demul.keys
+msgctxt "keys_files"
+msgid "Set to full screen"
+msgstr "Instellen op volledig scherm"
+
+#. TRANSLATION: amigacdtv.fsuae.keys, amigacd32.fsuae.keys, amiga500.fsuae.keys, amiga1200.fsuae.keys
 msgctxt "keys_files"
 msgid "Virtual Keyboard"
 msgstr "Virtueel toetsenbord"
 
-#. TRANSLATION: amiga1200.fsuae.keys, amiga500.fsuae.keys, amigacd32.fsuae.keys, amigacdtv.fsuae.keys
+#. TRANSLATION: amigacdtv.fsuae.keys, amigacd32.fsuae.keys, amiga500.fsuae.keys, amiga1200.fsuae.keys
 msgctxt "keys_files"
 msgid "Settings GUI"
 msgstr "Settings van de Grafische User Interface"
-
-#. TRANSLATION: moonlight.moonlight.keys
-msgctxt "keys_files"
-msgid "Exit emulator using SDL"
-msgstr "Sluit de emulator af met SDL"
-
-#. TRANSLATION: psp.ppsspp.keys
-msgctxt "keys_files"
-msgid "Pause / Menu"
-msgstr "Pauze / Menu"
-
-#. TRANSLATION: mame.keys
-msgctxt "keys_files"
-msgid "Exit Emulator"
-msgstr "Verlaat Emulator"
-
-#. TRANSLATION: scummvm.keys
-msgctxt "keys_files"
-msgid "Menu"
-msgstr "Menu"
-
-#. TRANSLATION: scummvm.keys
-msgctxt "keys_files"
-msgid "Graphics filtering on/off"
-msgstr "Grafische filtering aan/uit"
 
 #. TRANSLATION: vpinball.keys
 msgctxt "keys_files"
@@ -15661,207 +15851,195 @@ msgctxt "keys_files"
 msgid "Mouse Click"
 msgstr "Muisklik"
 
-#. TRANSLATION: daphne.hypseus-singe.keys, singe.hypseus-singe.keys
+#. TRANSLATION: dos.dosbox-x.keys
 msgctxt "keys_files"
-msgid "Service menu"
-msgstr "Servicemenu"
+msgid "Exit Dosbox-X"
+msgstr "Sluit Dosbox-X"
 
-#. TRANSLATION: corsixth.keys
+#. TRANSLATION: wiiu.keys
 msgctxt "keys_files"
-msgid "Move camera up"
-msgstr "Beweeg camera omhoog"
+msgid "Display the controller screen"
+msgstr "Laat het controller scherm zien"
 
-#. TRANSLATION: corsixth.keys
+#. TRANSLATION: wii.dolphin.keys
 msgctxt "keys_files"
-msgid "Move camera down"
-msgstr "Beweeg camera omlaag"
+msgid "Exit Dolphin"
+msgstr "Verlaat Dolphin"
 
-#. TRANSLATION: corsixth.keys
+#. TRANSLATION: psp.ppsspp.keys
 msgctxt "keys_files"
-msgid "Move camera to the left"
-msgstr "Beweeg camera naar links"
+msgid "Pause / Menu"
+msgstr "Pauze / Menu"
 
-#. TRANSLATION: corsixth.keys
+#. TRANSLATION: moonlight.moonlight.keys
 msgctxt "keys_files"
-msgid "Move camera to the right"
-msgstr "Beweeg camera naar rechts"
+msgid "Exit emulator using SDL"
+msgstr "Sluit de emulator af met SDL"
 
-#. TRANSLATION: corsixth.keys
+#. TRANSLATION: nds.drastic.keys
 msgctxt "keys_files"
-msgid "Quit the application"
-msgstr "Stop de applicatie"
+msgid "Joy2Pad Up"
+msgstr "Joy2Pad Omhoog"
 
-#. TRANSLATION: corsixth.keys
+#. TRANSLATION: nds.drastic.keys
 msgctxt "keys_files"
-msgid "Start / Valid"
-msgstr "Begin / Geldig"
+msgid "Joy2Pad Down"
+msgstr "Joy2Pad Omlaag"
 
-#. TRANSLATION: corsixth.keys
+#. TRANSLATION: nds.drastic.keys
 msgctxt "keys_files"
-msgid "Shows or hides the menu bar"
-msgstr "Toont of verbergt de menubalk"
+msgid "Joy2Pad Left"
+msgstr "Joy2Pad Links"
 
-#. TRANSLATION: corsixth.keys
+#. TRANSLATION: nds.drastic.keys
 msgctxt "keys_files"
-msgid "Rotates the current object"
-msgstr "Roteert het huidige object"
+msgid "Joy2Pad Right"
+msgstr "Joy2Pad Rechts"
 
-#. TRANSLATION: corsixth.keys
+#. TRANSLATION: nds.drastic.keys
 msgctxt "keys_files"
-msgid "Select"
-msgstr "Selecteer"
+msgid "Hat Up"
+msgstr "Hat Omhoog"
 
-#. TRANSLATION: corsixth.keys, fallout1-ce.keys, fallout2-ce.keys, iortcw.keys
+#. TRANSLATION: nds.drastic.keys
 msgctxt "keys_files"
-msgid "Quick save"
-msgstr "Snel opslaan"
+msgid "Hat Down"
+msgstr "Hat Omlaag"
 
-#. TRANSLATION: corsixth.keys, fallout1-ce.keys, fallout2-ce.keys, iortcw.keys
+#. TRANSLATION: nds.drastic.keys
 msgctxt "keys_files"
-msgid "Quick load"
-msgstr "Snel laden"
+msgid "Hat Left"
+msgstr "Hat Links"
 
-#. TRANSLATION: corsixth.keys
+#. TRANSLATION: nds.drastic.keys
 msgctxt "keys_files"
-msgid "Zoom in x5"
-msgstr "Zoom in x5"
+msgid "Hat Right"
+msgstr "Hat Rechts"
 
-#. TRANSLATION: corsixth.keys
+#. TRANSLATION: nds.drastic.keys
 msgctxt "keys_files"
-msgid "Zoom out x5"
-msgstr "Zoom uit x5"
+msgid "Button A"
+msgstr "Knop A"
 
-#. TRANSLATION: corsixth.keys
+#. TRANSLATION: nds.drastic.keys
 msgctxt "keys_files"
-msgid "Take a screenshot"
-msgstr "Maak een screenshot"
+msgid "Button B"
+msgstr "Knop B"
 
-#. TRANSLATION: corsixth.keys
+#. TRANSLATION: nds.drastic.keys
 msgctxt "keys_files"
-msgid "Reset the application"
-msgstr "Reset de applicatie"
+msgid "Button X"
+msgstr "Knop X"
 
-#. TRANSLATION: corsixth.keys
+#. TRANSLATION: nds.drastic.keys
 msgctxt "keys_files"
-msgid "Hire staff"
-msgstr "Huur personeel"
+msgid "Button Y"
+msgstr "Knop Y"
 
-#. TRANSLATION: corsixth.keys
+#. TRANSLATION: nds.drastic.keys
 msgctxt "keys_files"
-msgid "Edit room"
-msgstr "Bewerk kamer"
+msgid "Button Start"
+msgstr "Knop Start"
 
-#. TRANSLATION: corsixth.keys
+#. TRANSLATION: nds.drastic.keys
 msgctxt "keys_files"
-msgid "Open build room menu"
-msgstr "Open bouw kamer menu"
+msgid "Button Select"
+msgstr "Knop Select"
 
-#. TRANSLATION: corsixth.keys
+#. TRANSLATION: nds.drastic.keys
 msgctxt "keys_files"
-msgid "Open furnish corridor menu"
-msgstr "Open het menu voor het inrichten van de gang"
+msgid "Button L"
+msgstr "Knop L"
 
-#. TRANSLATION: corsixth.keys
+#. TRANSLATION: nds.drastic.keys
 msgctxt "keys_files"
-msgid "Quits the current level"
-msgstr "Sluit het huidige niveau af"
+msgid "Button R"
+msgstr "Knop R"
 
-#. TRANSLATION: corsixth.keys
+#. TRANSLATION: nds.drastic.keys
 msgctxt "keys_files"
-msgid "Speeds up the game"
-msgstr "Versnel het spel"
+msgid "Disposition A"
+msgstr "Disposition A"
 
-#. TRANSLATION: corsixth.keys
+#. TRANSLATION: nds.drastic.keys
 msgctxt "keys_files"
-msgid "Set speed normal"
-msgstr "Zet snelheid op normaal"
+msgid "Disposition B"
+msgstr "Disposition B"
 
-#. TRANSLATION: corsixth.keys
+#. TRANSLATION: nds.drastic.keys
 msgctxt "keys_files"
-msgid "Show the cheat menu"
-msgstr "Toon het cheat menu"
+msgid "Microphone"
+msgstr "Microfoon"
 
-#. TRANSLATION: corsixth.keys
+#. TRANSLATION: nds.drastic.keys
 msgctxt "keys_files"
-msgid "Zoom the camera out"
-msgstr "Zoom de camera uit"
+msgid "TouchScreen"
+msgstr "Touch Screen"
 
-#. TRANSLATION: corsixth.keys
+#. TRANSLATION: nds.drastic.keys
 msgctxt "keys_files"
-msgid "Zoom in the camera"
-msgstr "Zoom de camera in"
+msgid "Exit Drastic"
+msgstr "Verlaat Drastic"
 
-#. TRANSLATION: corsixth.keys
+#. TRANSLATION: nds.drastic.keys
 msgctxt "keys_files"
-msgid "Open LUA console"
-msgstr "Open de LUA console"
+msgid "Swap Screens"
+msgstr "Verwissel Schermen"
 
-#. TRANSLATION: corsixth.keys
+#. TRANSLATION: nds.drastic.keys
 msgctxt "keys_files"
-msgid "Town map"
-msgstr "Stadsplattegrond"
+msgid "QuickMenu"
+msgstr "SnelMenu"
 
-#. TRANSLATION: corsixth.keys
+#. TRANSLATION: nds.drastic.keys
 msgctxt "keys_files"
-msgid "Casebook"
-msgstr "Casebook"
+msgid "FastForward"
+msgstr "Vooruitspoelen"
 
-#. TRANSLATION: corsixth.keys
+#. TRANSLATION: mame.keys
 msgctxt "keys_files"
-msgid "Research"
-msgstr "Onderzoek"
+msgid "Exit Emulator"
+msgstr "Verlaat Emulator"
 
-#. TRANSLATION: corsixth.keys
+#. TRANSLATION: scummvm.keys
 msgctxt "keys_files"
-msgid "Manage Staff"
-msgstr "Beheer personeel"
+msgid "Menu"
+msgstr "Menu"
 
-#. TRANSLATION: dxx-rebirth.keys, etlegacy.keys, fallout1-ce.keys, fallout2-ce.keys, sonic-mania.keys, ...
+#. TRANSLATION: scummvm.keys
 msgctxt "keys_files"
-msgid "Exit game"
-msgstr "Stop spel"
+msgid "Graphics filtering on/off"
+msgstr "Grafische filtering aan/uit"
 
-#. TRANSLATION: eduke32.keys, gzdoom.keys, raze.keys
+#. TRANSLATION: jaguar.bigpemu.keys
 msgctxt "keys_files"
-msgid "quicksave"
-msgstr "snel opslaan"
+msgid "Configuration menu"
+msgstr "Configuratiemenu"
 
-#. TRANSLATION: eduke32.keys, gzdoom.keys, raze.keys
-msgctxt "keys_files"
-msgid "quickload"
-msgstr "snellaad"
+#~ msgctxt "game_options"
+#~ msgid "PS3 CONTROLLER 1"
+#~ msgstr "PS3 CONTROLLER 1"
 
-#. TRANSLATION: eduke32.keys, gzdoom.keys, raze.keys
-msgctxt "keys_files"
-msgid "screenshot"
-msgstr "screenshot"
+#~ msgctxt "game_options"
+#~ msgid "PS3 CONTROLLER 2"
+#~ msgstr "PS3 CONTROLLER 2"
 
-#. TRANSLATION: fallout1-ce.keys, fallout2-ce.keys
-msgctxt "keys_files"
-msgid "Bring up menu"
-msgstr "Toon menu"
+#~ msgctxt "game_options"
+#~ msgid "PS3 CONTROLLER 3"
+#~ msgstr "PS3 CONTROLLER 3"
 
-#. TRANSLATION: iortcw.keys, theforceengine.keys
-msgctxt "keys_files"
-msgid "Skip cutscene"
-msgstr "Sla cutscene over"
+#~ msgctxt "game_options"
+#~ msgid "PS3 CONTROLLER 4"
+#~ msgstr "PS3 CONTROLLER 4"
 
-#. TRANSLATION: theforceengine.keys
-msgctxt "keys_files"
-msgid "Quick Load"
-msgstr "Snel Laden"
+#~ msgctxt "game_options"
+#~ msgid "PS3 CONTROLLER 5"
+#~ msgstr "PS3 CONTROLLER 5"
 
-#. TRANSLATION: theforceengine.keys
-msgctxt "keys_files"
-msgid "Quick Save"
-msgstr "Snel Opslaan"
+#~ msgctxt "game_options"
+#~ msgid "PS3 CONTROLLER 6"
+#~ msgstr "PS3 CONTROLLER 6"
 
-#. TRANSLATION: flatpak.keys
-msgctxt "keys_files"
-msgid "Exit running Flatpak"
-msgstr "Stop het draaien van Flatpak"
-
-#. TRANSLATION: steam.keys
-msgctxt "keys_files"
-msgid "Exit Steam"
-msgstr "Sluit Steam af"
+#~ msgctxt "game_options"
+#~ msgid "PS3 CONTROLLER 7"
+#~ msgstr "PS3 CONTROLLER 7"
