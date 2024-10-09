@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import itertools
+import logging
 import os
 import shutil
 from pathlib import Path
@@ -10,7 +11,6 @@ from ... import Command
 from ...batoceraPaths import BATOCERA_SHADERS, CONFIGS, HOME, OVERLAYS, ROMS, SAVES, USER_SHADERS, mkdir_if_not_exists
 from ...settings.unixSettings import UnixSettings
 from ...utils import videoMode as videoMode
-from ...utils.logger import get_logger
 from ..Generator import Generator
 from . import libretroConfig, libretroControllers, libretroRetroarchCustom
 from .libretroPaths import (
@@ -25,7 +25,7 @@ if TYPE_CHECKING:
     from ...Emulator import Emulator
     from ...types import HotkeysContext
 
-eslog = get_logger(__name__)
+eslog = logging.getLogger(__name__)
 
 class LibretroGenerator(Generator):
 
@@ -96,7 +96,7 @@ class LibretroGenerator(Generator):
                 lightgun = system.getOptBoolean('lightgun_map')
             else:
                 # Lightgun button mapping breaks lr-mame's inputs, disable if left on auto
-                if system.config['core'] in [ 'mess', 'mamevirtual', 'same_cdi', 'mame078plus', 'mame0139' ]:
+                if system.config['core'] in [ 'mess', 'mamevirtual', 'same_cdi', 'mame078plus' ]:
                     lightgun = False
                 else:
                     lightgun = True
