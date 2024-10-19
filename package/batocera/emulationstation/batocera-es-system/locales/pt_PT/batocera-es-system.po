@@ -98,7 +98,7 @@ msgstr ""
 "Força o jogo a renderizar nesta proporção de ecrã. Nem todos os sistemas "
 "suportam todas as proporções."
 
-#. TRANSLATION: shared, dolphin, flycast, mupen64plus, pcsx2, ...
+#. TRANSLATION: shared, dolphin, flycast, mupen64plus, pcsx2
 msgctxt "game_options"
 msgid "GAME ASPECT RATIO"
 msgstr "PROPORÇÃO DE ECRÃ DO JOGO"
@@ -3237,6 +3237,25 @@ msgctxt "game_options"
 msgid "2.5x (1600x1200)"
 msgstr "2.5x (1600x1200)"
 
+#. TRANSLATION: libretro/flycast, flycast/dolphin
+msgctxt "game_options"
+msgid ""
+"Enable the Dreamcast DSP for more accurate audio. Only recommended for fast "
+"systems."
+msgstr ""
+"Ativa o Processador de Áudio Digital (DSP) da Dreamcast para um som mais "
+"preciso. Recomendado apenas para sistemas rápidos."
+
+#. TRANSLATION: libretro/flycast, flycast/dolphin
+msgctxt "game_options"
+msgid "DIGITAL SOUND PROCESSOR"
+msgstr "PROCESSADOR DE SOM DIGITAL"
+
+#. TRANSLATION: libretro/flycast, libretro/mame, libretro/mame, cemu, cemu, ...
+msgctxt "game_options"
+msgid "Disabled (Default)"
+msgstr "Desativado (Predefinição)"
+
 #. TRANSLATION: libretro/flycast, libretro/pcsx_rearmed, flycast
 msgctxt "game_options"
 msgid "PLAYER 1 CROSSHAIR COLOR"
@@ -4313,11 +4332,6 @@ msgstr ""
 msgctxt "game_options"
 msgid "COIN SOUND PLUGIN"
 msgstr "EXTENSÃO PARA SOM DA MOEDA"
-
-#. TRANSLATION: libretro/mame, libretro/mame, cemu, cemu, cemu, ...
-msgctxt "game_options"
-msgid "Disabled (Default)"
-msgstr "Desativado (Predefinição)"
 
 #. TRANSLATION: libretro/mame, libretro/mamevirtual
 msgctxt "game_options"
@@ -5868,7 +5882,7 @@ msgctxt "game_options"
 msgid "JOYSTICK SENSITIVITY"
 msgstr "SENSIBILIDADE DO JOYSTICK"
 
-#. TRANSLATION: libretro/mupen64plus-next, libretro/parallel_n64
+#. TRANSLATION: libretro/mupen64plus-next, libretro/parallel_n64, dhewm3
 msgctxt "game_options"
 msgid "100% (Default)"
 msgstr "100% (Padrão)"
@@ -8490,7 +8504,7 @@ msgctxt "game_options"
 msgid "Keep Aspect Ration (Default)"
 msgstr "Manter a proporção de ecrã (Predefinição)"
 
-#. TRANSLATION: cemu, hypseus-singe, openbor, redream, demul
+#. TRANSLATION: cemu, hypseus-singe, openbor, redream
 msgctxt "game_options"
 msgid "Stretch"
 msgstr "Esticado"
@@ -8603,7 +8617,7 @@ msgctxt "game_options"
 msgid "OpenGL (Default)"
 msgstr "OpenGL (Predefinição)"
 
-#. TRANSLATION: citra, dolphin, dolphin_triforce, duckstation, pcsx2
+#. TRANSLATION: citra, dolphin, dolphin_triforce, duckstation, melonds, ...
 msgctxt "game_options"
 msgid "Fix screen tearing. CPU heavy."
 msgstr "Correção da imagem (rasgar). Exige do CPU."
@@ -9707,25 +9721,6 @@ msgctxt "game_options"
 msgid "CONTROLLER 4 FEATURE PACK"
 msgstr "PACOTE DE RECURSOS DO COMANDO 4"
 
-#. TRANSLATION: flycast/dolphin
-msgctxt "game_options"
-msgid ""
-"Enable the Dreamcast DSP for more accurate audio. Only recommended for fast "
-"systems."
-msgstr ""
-"Ativa o Processador de Áudio Digital (DSP) da Dreamcast para um som mais "
-"preciso. Recomendado apenas para sistemas rápidos."
-
-#. TRANSLATION: flycast/dolphin
-msgctxt "game_options"
-msgid "DIGITAL SOUND PROCESSOR"
-msgstr "PROCESSADOR DE SOM DIGITAL"
-
-#. TRANSLATION: flycast/dolphin, flycast
-msgctxt "game_options"
-msgid "Disbaled (Default)"
-msgstr "Desativado (Predefinição)"
-
 #. TRANSLATION: flycast
 msgctxt "game_options"
 msgid "Force the game to render in this aspect ratio."
@@ -9750,6 +9745,11 @@ msgstr "4.5x (2880x2160)"
 msgctxt "game_options"
 msgid "Rotate the screen with the emulator."
 msgstr "Rodar o ecrã com o emulador."
+
+#. TRANSLATION: flycast
+msgctxt "game_options"
+msgid "Disbaled (Default)"
+msgstr "Desativado (Predefinição)"
 
 #. TRANSLATION: flycast
 msgctxt "game_options"
@@ -9925,6 +9925,16 @@ msgstr "IDE (Predefinição)"
 msgctxt "game_options"
 msgid "ASCI"
 msgstr "ASCI"
+
+#. TRANSLATION: melonds
+msgctxt "game_options"
+msgid "OpenGL (Classic)"
+msgstr ""
+
+#. TRANSLATION: melonds
+msgctxt "game_options"
+msgid "OpenGL (Compute shader)"
+msgstr ""
 
 #. TRANSLATION: melonds
 msgctxt "game_options"
@@ -11961,7 +11971,7 @@ msgctxt "game_options"
 msgid "Choose your preferred aspect ratio."
 msgstr "Escolha sua proporção de ecrã preferida."
 
-#. TRANSLATION: redream, demul, bigpemu
+#. TRANSLATION: redream, bigpemu
 msgctxt "game_options"
 msgid "4:3 (Default)"
 msgstr "4:3 (Predefinição)"
@@ -15231,6 +15241,21 @@ msgctxt "game_options"
 msgid "Anisotropic filtering"
 msgstr "Filtragem anisotrópica"
 
+#. TRANSLATION: dhewm3
+msgctxt "game_options"
+msgid "Change the game's brightness."
+msgstr "Alterar o brilho do jogo."
+
+#. TRANSLATION: dhewm3
+msgctxt "game_options"
+msgid "BRIGHTNESS"
+msgstr "BRILHO"
+
+#. TRANSLATION: dhewm3
+msgctxt "game_options"
+msgid "200% (Maximum)"
+msgstr "200% (Máximo)"
+
 #. TRANSLATION: steam.keys
 msgctxt "keys_files"
 msgid "Exit Steam"
@@ -15281,12 +15306,12 @@ msgctxt "keys_files"
 msgid "Skip cutscene"
 msgstr "Saltar cuscene"
 
-#. TRANSLATION: iortcw.keys, triforce.dolphin_triforce.keys, psx.duckstation.keys, 3ds.citra.keys, psp.ppsspp.keys, ...
+#. TRANSLATION: iortcw.keys, triforce.dolphin_triforce.keys, psx.duckstation.keys, 3ds.citra.keys, doom3.dhewm3.keys, ...
 msgctxt "keys_files"
 msgid "Screenshot"
 msgstr "Captura de ecrã"
 
-#. TRANSLATION: rott.keys, theforceengine.keys, dreamcast.redream.keys, cave3rd.demul.keys, dreamcast.demul.keys, ...
+#. TRANSLATION: rott.keys, theforceengine.keys, dreamcast.redream.keys, vpinball.keys, switch.ryujinx.keys, ...
 msgctxt "keys_files"
 msgid "Exit the emulator"
 msgstr "Sair do emulador"
@@ -15506,12 +15531,12 @@ msgctxt "keys_files"
 msgid "Manage Staff"
 msgstr "Gerir equipa"
 
-#. TRANSLATION: theforceengine.keys
+#. TRANSLATION: theforceengine.keys, doom3.dhewm3.keys
 msgctxt "keys_files"
 msgid "Quick Load"
 msgstr "Carregamento Rápido"
 
-#. TRANSLATION: theforceengine.keys
+#. TRANSLATION: theforceengine.keys, doom3.dhewm3.keys
 msgctxt "keys_files"
 msgid "Quick Save"
 msgstr "Guardar Rápido"
@@ -15595,121 +15620,6 @@ msgstr "Avanço Rápido"
 msgctxt "keys_files"
 msgid "Service menu"
 msgstr "Menu de serviço"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Start"
-msgstr "Iniciar"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Coin"
-msgstr "Moeda"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Push 2"
-msgstr "Comando 2"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Push 1"
-msgstr "Comando 1"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Push 4"
-msgstr "Comando 4"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Push 3"
-msgstr "Comando 3"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Push 5"
-msgstr "Comando 5"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Push 6"
-msgstr "Comando 6"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Push 7"
-msgstr "Comando 7"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Push 8"
-msgstr "Comando 8"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Digital Left"
-msgstr "Digital à Esquerda"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Digital Right"
-msgstr "Digital à Direita"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Digital Up"
-msgstr "Digital para Cima"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Digital Down"
-msgstr "Digital para Baixo"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Analog 1 Left"
-msgstr "Analógico 1 para à Esquerda"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Analog 1 Right"
-msgstr "Analógico 1 para à Direita"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Analog 1 Up"
-msgstr "Analógico 1 para Cima"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Analog 1 Down"
-msgstr "Analógico 1 para Baixo"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Analog 2 Left"
-msgstr "Analógico 2 para à Esquerda"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Analog 2 Right"
-msgstr "Analógico 2 para à Direita"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Analog 2 Up"
-msgstr "Analógico 2 para Cima"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Analog 2 Down"
-msgstr "Analógico 2 para Baixo"
-
-#. TRANSLATION: hikaru.demul.keys, gaelco.demul.keys
-msgctxt "keys_files"
-msgid "Set to full screen"
-msgstr "Definir para ecrã completo"
 
 #. TRANSLATION: amigacdtv.fsuae.keys, amigacd32.fsuae.keys, amiga500.fsuae.keys, amiga1200.fsuae.keys
 msgctxt "keys_files"
@@ -15990,5 +15900,3 @@ msgstr "Ligar/Desligar o filtro de gráficos"
 msgctxt "keys_files"
 msgid "Configuration menu"
 msgstr "Menu de configuração"
-
-

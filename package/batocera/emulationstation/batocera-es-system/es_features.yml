@@ -1780,6 +1780,13 @@ libretro:
                     "10x (6400x4800)":   6400x4800
                     "11x (7040x5280)":   7040x5280
                     "12x (7680x5760)":   7680x5760
+            reicast_dsp:
+                group: ADVANCED OPTIONS
+                prompt:      DIGITAL SOUND PROCESSOR
+                description: Enable the Dreamcast DSP for more accurate audio. Only recommended for fast systems.
+                choices:
+                    "Disabled (Default)": disabled
+                    "Enabled"           : enabled
             reicast_lightgun1_crosshair:
                 group: LIGHT GUN
                 prompt:      PLAYER 1 CROSSHAIR COLOR
@@ -3725,9 +3732,6 @@ libretro:
                       choices:
                           "On":  1
                           "Off": 0
-
-    mame0139:
-      shared: [use_guns]
 
     mame078plus:
       features: [netplay]
@@ -6706,6 +6710,9 @@ libretro:
                 choices:
                     "Off":                      disabled
                     "On":                       enabled
+    vircon32:
+      features: [netplay, padtokeyboard]
+      shared: [rewind, autosave]
     virtualjaguar:
       features: [padtokeyboard, cheevos]
       shared: [autosave]
@@ -8178,7 +8185,7 @@ flycast:
           prompt:      DIGITAL SOUND PROCESSOR
           description: Enable the Dreamcast DSP for more accurate audio. Only recommended for fast systems.
           choices:
-            "Disbaled (Default)": "no"
+            "Disabled (Default)": "no"
             "Enabled"           : "yes"
 
 fpinball:
@@ -8247,63 +8254,70 @@ melonds:
             prompt: GRAPHICS API
             description: Choose which graphics API library to use.
             choices:
-                "Software": 0
-                "OpenGL":   1
+                "Software":                0
+                "OpenGL (Classic)":        1
+                "OpenGL (Compute shader)": 2
+        melonds_vsync:
+            prompt: VSYNC
+            description: Fix screen tearing. CPU heavy.
+            choices:
+                "Off": False
+                "On":  True
         melonds_framerate:
             group: ADVANCED OPTIONS
             prompt: LIMIT FRAME RATE
             choices:
-                "No Limit":          0
-                "As game specifies": 1
+                "No Limit":          False
+                "As game specifies": True
         melonds_resolution:
             prompt: RENDERING RESOLUTION
             description: Enhancement. Increase the rendering resolution. Makes 3D objects clearer.
             choices:
-                "1x (256x192)":           1
-                "2x (512x384)":           2
-                "3x (768x576)":           3
-                "4x (1024x768)":          4
-                "5x (1280x960)":          5
-                "6x (1536x1152)":         6
-                "7x (1792x1344)":         7
-                "8x (2048x1536)":         8
-                "9x (2304x1728)":         9
-                "10x (2560x1920)":        10
-                "11x (2816x2112)":        11
-                "12x (3072x2304)":        12
-                "13x (3328x2496)":        13
-                "14x (3584x2688)":        14
-                "15x (3840x2880)":        15
-                "16x (4096x3072)":        16
+                "1x (256x192)":    1
+                "2x (512x384)":    2
+                "3x (768x576)":    3
+                "4x (1024x768)":   4
+                "5x (1280x960)":   5
+                "6x (1536x1152)":  6
+                "7x (1792x1344)":  7
+                "8x (2048x1536)":  8
+                "9x (2304x1728)":  9
+                "10x (2560x1920)": 10
+                "11x (2816x2112)": 11
+                "12x (3072x2304)": 12
+                "13x (3328x2496)": 13
+                "14x (3584x2688)": 14
+                "15x (3840x2880)": 15
+                "16x (4096x3072)": 16
         melonds_polygons:
             group: ADVANCED OPTIONS
             prompt: ENABLE POLYGON SPLITTING
             description: Enhancement. Enables improved polygon splitting.
             choices:
-                "Off": 0
-                "On":  1
+                "Off": False
+                "On":  True
         melonds_rotation:
             prompt: SCREEN ROTATION
             description: Rotates the screens, to simulate holding the DS sideways.
             choices:
-                "0 degrees":           0
-                "90 degrees":          1
-                "180 degrees":         2
-                "270 degrees":         3
+                "0 degrees":   0
+                "90 degrees":  1
+                "180 degrees": 2
+                "270 degrees": 3
         melonds_screenswap:
             prompt: SCREEN SWAP
             description: Swap the position of the dual displays.
             choices:
-                "Off":           0
-                "On":            1
+                "Off": False
+                "On":  True
         melonds_screensize:
             prompt: SCREEN SIZE
             description: Sets the window size to an integer size.
             choices:
-                "1x":           0
-                "2x":           1
-                "3x":           2
-                "4x":           3
+                "1x": 0
+                "2x": 1
+                "3x": 2
+                "4x": 3
         melonds_layout:
             prompt: SCREEN LAYOUT
             description: Adjusts the positions of the screens.
@@ -8325,18 +8339,18 @@ melonds:
         melonds_scaling:
             prompt: INTEGER SCALING
             choices:
-                "Off":             0
-                "On":              1
+                "Off": False
+                "On":  True
         melonds_cheats:
             prompt: ENABLE CHEATS
             choices:
-                "Off (Default)":   0
-                "On":              1
+                "Off (Default)": False
+                "On":            True
         melonds_osd:
             prompt: SHOW ON-SCREEN DISPLAY MESSAGES
             choices:
-                "Off":          0
-                "On":           1
+                "Off": False
+                "On":  True
         melonds_console:
             prompt: CONSOLE TYPE
             choices:
@@ -11967,23 +11981,6 @@ openmsx:
                 "Floppy Disk Image": "disk"
                 "Hard Disk Image":   "hda"
 
-demul:
-  shared: [powermode, tdp, videomode, use_wheels, wheel_rotation, wheel_deadzone, wheel_midzone]
-  cfeatures:
-        demulRatio:
-            prompt:      GAME ASPECT RATIO
-            choices:
-                "Stretch":       0
-                "4:3 (Default)": 1
-                "16:9":          2
-        demulVSync:
-            group: ADVANCED OPTIONS
-            prompt:      VSYNC
-            description: Fix screen tearing.
-            choices:
-                "Off": 0
-                "On":  1
-
 sh:
   features: [padtokeyboard]
   shared: [powermode, tdp, videomode, bezel, bezel_stretch, hud, hud_corner, bezel.tattoo, bezel.tattoo_corner, bezel.tattoo_file, bezel.resize_tattoo]
@@ -13143,3 +13140,22 @@ x16emu:
         "Nearest pixel sampling": "nearest"
         "Linear filtering":       "linear"
         "Anisotropic filtering":  "best"
+
+shadps4:
+  features: [padtokeyboard]
+  shared: [powermode, tdp, videomode, bezel, bezel_stretch, hud, hud_corner, bezel.tattoo, bezel.tattoo_corner, bezel.tattoo_file, bezel.resize_tattoo]
+
+dhewm3:
+  features: [padtokeyboard]
+  shared: [powermode, tdp, videomode, bezel, bezel_stretch, hud, hud_corner, bezel.tattoo, bezel.tattoo_corner, bezel.tattoo_file, bezel.resize_tattoo]
+  cfeatures:
+    dhewm3_brightness:
+      prompt: BRIGHTNESS
+      description: Change the game's brightness.
+      choices:
+        "100% (Default)": 1
+        "120%":           1.20
+        "140%":           1.40
+        "160%":           1.60
+        "180%":           1.80
+        "200% (Maximum)": 2

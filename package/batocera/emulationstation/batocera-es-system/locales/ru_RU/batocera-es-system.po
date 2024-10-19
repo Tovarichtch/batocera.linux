@@ -97,7 +97,7 @@ msgstr ""
 "Принудительно рендерить игру в данном соотношении сторон. Не все системы "
 "поддерживают все соотношения."
 
-#. TRANSLATION: shared, dolphin, flycast, mupen64plus, pcsx2, ...
+#. TRANSLATION: shared, dolphin, flycast, mupen64plus, pcsx2
 msgctxt "game_options"
 msgid "GAME ASPECT RATIO"
 msgstr "СООТНОШЕНИЕ СТОРОН ИГРЫ"
@@ -3228,6 +3228,25 @@ msgctxt "game_options"
 msgid "2.5x (1600x1200)"
 msgstr "2.5x (1600x1200)"
 
+#. TRANSLATION: libretro/flycast, flycast/dolphin
+msgctxt "game_options"
+msgid ""
+"Enable the Dreamcast DSP for more accurate audio. Only recommended for fast "
+"systems."
+msgstr ""
+"Включить DSP Dreamcast для более точного звука. Рекомендуется только для "
+"быстрых систем."
+
+#. TRANSLATION: libretro/flycast, flycast/dolphin
+msgctxt "game_options"
+msgid "DIGITAL SOUND PROCESSOR"
+msgstr "DIGITAL SOUND PROCESSOR"
+
+#. TRANSLATION: libretro/flycast, libretro/mame, libretro/mame, cemu, cemu, ...
+msgctxt "game_options"
+msgid "Disabled (Default)"
+msgstr "Отключено (по умолчанию)"
+
 #. TRANSLATION: libretro/flycast, libretro/pcsx_rearmed, flycast
 msgctxt "game_options"
 msgid "PLAYER 1 CROSSHAIR COLOR"
@@ -4306,11 +4325,6 @@ msgstr "Звуковой эффект падения монеты при наж�
 msgctxt "game_options"
 msgid "COIN SOUND PLUGIN"
 msgstr "ЗВУКОВОЙ ПЛАГИН ДЛЯ МОНЕТ"
-
-#. TRANSLATION: libretro/mame, libretro/mame, cemu, cemu, cemu, ...
-msgctxt "game_options"
-msgid "Disabled (Default)"
-msgstr "Отключено (по умолчанию)"
 
 #. TRANSLATION: libretro/mame, libretro/mamevirtual
 msgctxt "game_options"
@@ -5859,7 +5873,7 @@ msgctxt "game_options"
 msgid "JOYSTICK SENSITIVITY"
 msgstr "ЧУВСТВИТЕЛЬНОСТЬ ДЖОЙСТИКА"
 
-#. TRANSLATION: libretro/mupen64plus-next, libretro/parallel_n64
+#. TRANSLATION: libretro/mupen64plus-next, libretro/parallel_n64, dhewm3
 msgctxt "game_options"
 msgid "100% (Default)"
 msgstr "100% (по умолчанию)"
@@ -8476,7 +8490,7 @@ msgctxt "game_options"
 msgid "Keep Aspect Ration (Default)"
 msgstr "Сохранить соотношение сторон (по умолчанию)"
 
-#. TRANSLATION: cemu, hypseus-singe, openbor, redream, demul
+#. TRANSLATION: cemu, hypseus-singe, openbor, redream
 msgctxt "game_options"
 msgid "Stretch"
 msgstr "Растянуть"
@@ -8589,7 +8603,7 @@ msgctxt "game_options"
 msgid "OpenGL (Default)"
 msgstr "OpenGL (по умолчанию)"
 
-#. TRANSLATION: citra, dolphin, dolphin_triforce, duckstation, pcsx2
+#. TRANSLATION: citra, dolphin, dolphin_triforce, duckstation, melonds, ...
 msgctxt "game_options"
 msgid "Fix screen tearing. CPU heavy."
 msgstr "Исправляет разрывы экрана. Нагрузка на CPU."
@@ -9687,25 +9701,6 @@ msgctxt "game_options"
 msgid "CONTROLLER 4 FEATURE PACK"
 msgstr "КОТРОЛЛЕР 4 FEATURE PACK"
 
-#. TRANSLATION: flycast/dolphin
-msgctxt "game_options"
-msgid ""
-"Enable the Dreamcast DSP for more accurate audio. Only recommended for fast "
-"systems."
-msgstr ""
-"Включить DSP Dreamcast для более точного звука. Рекомендуется только для "
-"быстрых систем."
-
-#. TRANSLATION: flycast/dolphin
-msgctxt "game_options"
-msgid "DIGITAL SOUND PROCESSOR"
-msgstr "DIGITAL SOUND PROCESSOR"
-
-#. TRANSLATION: flycast/dolphin, flycast
-msgctxt "game_options"
-msgid "Disbaled (Default)"
-msgstr "Отключить (по умолчанию)"
-
 #. TRANSLATION: flycast
 msgctxt "game_options"
 msgid "Force the game to render in this aspect ratio."
@@ -9730,6 +9725,11 @@ msgstr "4.5x (2880x2160)"
 msgctxt "game_options"
 msgid "Rotate the screen with the emulator."
 msgstr "Поворот экрана с помощью эмулятора."
+
+#. TRANSLATION: flycast
+msgctxt "game_options"
+msgid "Disbaled (Default)"
+msgstr "Отключить (по умолчанию)"
 
 #. TRANSLATION: flycast
 msgctxt "game_options"
@@ -9905,6 +9905,16 @@ msgstr "IDE (по умолчанию)"
 msgctxt "game_options"
 msgid "ASCI"
 msgstr "ASCI"
+
+#. TRANSLATION: melonds
+msgctxt "game_options"
+msgid "OpenGL (Classic)"
+msgstr ""
+
+#. TRANSLATION: melonds
+msgctxt "game_options"
+msgid "OpenGL (Compute shader)"
+msgstr ""
 
 #. TRANSLATION: melonds
 msgctxt "game_options"
@@ -11938,7 +11948,7 @@ msgctxt "game_options"
 msgid "Choose your preferred aspect ratio."
 msgstr "Выберите предпочтительное соотношение сторон."
 
-#. TRANSLATION: redream, demul, bigpemu
+#. TRANSLATION: redream, bigpemu
 msgctxt "game_options"
 msgid "4:3 (Default)"
 msgstr "4:3 (по умолчанию)"
@@ -15199,6 +15209,21 @@ msgctxt "game_options"
 msgid "Anisotropic filtering"
 msgstr ""
 
+#. TRANSLATION: dhewm3
+msgctxt "game_options"
+msgid "Change the game's brightness."
+msgstr ""
+
+#. TRANSLATION: dhewm3
+msgctxt "game_options"
+msgid "BRIGHTNESS"
+msgstr ""
+
+#. TRANSLATION: dhewm3
+msgctxt "game_options"
+msgid "200% (Maximum)"
+msgstr ""
+
 #. TRANSLATION: steam.keys
 msgctxt "keys_files"
 msgid "Exit Steam"
@@ -15249,12 +15274,12 @@ msgctxt "keys_files"
 msgid "Skip cutscene"
 msgstr "Пропуск катсцен"
 
-#. TRANSLATION: iortcw.keys, triforce.dolphin_triforce.keys, psx.duckstation.keys, 3ds.citra.keys, psp.ppsspp.keys, ...
+#. TRANSLATION: iortcw.keys, triforce.dolphin_triforce.keys, psx.duckstation.keys, 3ds.citra.keys, doom3.dhewm3.keys, ...
 msgctxt "keys_files"
 msgid "Screenshot"
 msgstr "Скриншот"
 
-#. TRANSLATION: rott.keys, theforceengine.keys, dreamcast.redream.keys, cave3rd.demul.keys, dreamcast.demul.keys, ...
+#. TRANSLATION: rott.keys, theforceengine.keys, dreamcast.redream.keys, vpinball.keys, switch.ryujinx.keys, ...
 msgctxt "keys_files"
 msgid "Exit the emulator"
 msgstr "Выйти из эмулятора"
@@ -15474,12 +15499,12 @@ msgctxt "keys_files"
 msgid "Manage Staff"
 msgstr "Управление персоналом"
 
-#. TRANSLATION: theforceengine.keys
+#. TRANSLATION: theforceengine.keys, doom3.dhewm3.keys
 msgctxt "keys_files"
 msgid "Quick Load"
 msgstr "Быстрая загрузка"
 
-#. TRANSLATION: theforceengine.keys
+#. TRANSLATION: theforceengine.keys, doom3.dhewm3.keys
 msgctxt "keys_files"
 msgid "Quick Save"
 msgstr "Быстрое сохранение"
@@ -15563,121 +15588,6 @@ msgstr "Быстрая перемотка"
 msgctxt "keys_files"
 msgid "Service menu"
 msgstr "Сервисное меню"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Start"
-msgstr "Старт"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Coin"
-msgstr "Монета"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Push 2"
-msgstr "Нажать 2"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Push 1"
-msgstr "Нажать 1"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Push 4"
-msgstr "Нажать 4"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Push 3"
-msgstr "Нажать 3"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Push 5"
-msgstr "Нажать 5"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Push 6"
-msgstr "Нажать 6"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Push 7"
-msgstr "Нажать 7"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Push 8"
-msgstr "Нажать 8"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Digital Left"
-msgstr "Цифровой влево"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Digital Right"
-msgstr "Цифровой вправо"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Digital Up"
-msgstr "Цифровой вверх"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Digital Down"
-msgstr "Цифровой вниз"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Analog 1 Left"
-msgstr "Аналог 1 влево"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Analog 1 Right"
-msgstr "Аналог 1 вправо"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Analog 1 Up"
-msgstr "Аналог 1 вверх"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Analog 1 Down"
-msgstr "Аналог 1 вниз"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Analog 2 Left"
-msgstr "Аналог 2 влево"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Analog 2 Right"
-msgstr "Аналог 2 вправо"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Analog 2 Up"
-msgstr "Аналог 2 вверх"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Analog 2 Down"
-msgstr "Аналог 2 вниз"
-
-#. TRANSLATION: hikaru.demul.keys, gaelco.demul.keys
-msgctxt "keys_files"
-msgid "Set to full screen"
-msgstr "Установить на весь экран"
 
 #. TRANSLATION: amigacdtv.fsuae.keys, amigacd32.fsuae.keys, amiga500.fsuae.keys, amiga1200.fsuae.keys
 msgctxt "keys_files"
@@ -15958,6 +15868,98 @@ msgstr "Фильтрация графики вкл/выкл"
 msgctxt "keys_files"
 msgid "Configuration menu"
 msgstr "Меню настроек"
+
+#~ msgctxt "keys_files"
+#~ msgid "Start"
+#~ msgstr "Старт"
+
+#~ msgctxt "keys_files"
+#~ msgid "Coin"
+#~ msgstr "Монета"
+
+#~ msgctxt "keys_files"
+#~ msgid "Push 2"
+#~ msgstr "Нажать 2"
+
+#~ msgctxt "keys_files"
+#~ msgid "Push 1"
+#~ msgstr "Нажать 1"
+
+#~ msgctxt "keys_files"
+#~ msgid "Push 4"
+#~ msgstr "Нажать 4"
+
+#~ msgctxt "keys_files"
+#~ msgid "Push 3"
+#~ msgstr "Нажать 3"
+
+#~ msgctxt "keys_files"
+#~ msgid "Push 5"
+#~ msgstr "Нажать 5"
+
+#~ msgctxt "keys_files"
+#~ msgid "Push 6"
+#~ msgstr "Нажать 6"
+
+#~ msgctxt "keys_files"
+#~ msgid "Push 7"
+#~ msgstr "Нажать 7"
+
+#~ msgctxt "keys_files"
+#~ msgid "Push 8"
+#~ msgstr "Нажать 8"
+
+#~ msgctxt "keys_files"
+#~ msgid "Digital Left"
+#~ msgstr "Цифровой влево"
+
+#~ msgctxt "keys_files"
+#~ msgid "Digital Right"
+#~ msgstr "Цифровой вправо"
+
+#~ msgctxt "keys_files"
+#~ msgid "Digital Up"
+#~ msgstr "Цифровой вверх"
+
+#~ msgctxt "keys_files"
+#~ msgid "Digital Down"
+#~ msgstr "Цифровой вниз"
+
+#~ msgctxt "keys_files"
+#~ msgid "Analog 1 Left"
+#~ msgstr "Аналог 1 влево"
+
+#~ msgctxt "keys_files"
+#~ msgid "Analog 1 Right"
+#~ msgstr "Аналог 1 вправо"
+
+#~ msgctxt "keys_files"
+#~ msgid "Analog 1 Up"
+#~ msgstr "Аналог 1 вверх"
+
+#~ msgctxt "keys_files"
+#~ msgid "Analog 1 Down"
+#~ msgstr "Аналог 1 вниз"
+
+#~ msgctxt "keys_files"
+#~ msgid "Analog 2 Left"
+#~ msgstr "Аналог 2 влево"
+
+#~ msgctxt "keys_files"
+#~ msgid "Analog 2 Right"
+#~ msgstr "Аналог 2 вправо"
+
+#~ msgctxt "keys_files"
+#~ msgid "Analog 2 Up"
+#~ msgstr "Аналог 2 вверх"
+
+#~ msgctxt "keys_files"
+#~ msgid "Analog 2 Down"
+#~ msgstr "Аналог 2 вниз"
+
+#~ msgctxt "keys_files"
+#~ msgid "Set to full screen"
+#~ msgstr "Установить на весь экран"
 
 #~ msgctxt "game_options"
 #~ msgid "PS3 CONTROLLER 1"

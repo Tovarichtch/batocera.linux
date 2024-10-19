@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-ALLLINUXFIRMWARES_VERSION = 20240811
+ALLLINUXFIRMWARES_VERSION = 20240909
 ALLLINUXFIRMWARES_SOURCE = linux-firmware-$(ALLLINUXFIRMWARES_VERSION).tar.gz
 ALLLINUXFIRMWARES_SITE = https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot
 
@@ -28,7 +28,7 @@ ifeq ($(BR2_PACKAGE_BRCMFMAC_SDIO_FIRMWARE_RPI)$(BR2_PACKAGE_EXTRALINUXFIRMWARES
     ALLLINUXFIRMWARES_REMOVE_DIRS += $(@D)/brcm
 endif
 
-# Remove qualcomm firmware if not buidling Ayn ODIN or RPMini
+# Remove qualcomm firmware if not buidling Qualcomm Board
 ifneq ($(BR2_PACKAGE_BATOCERA_TARGET_ODIN)$(BR2_PACKAGE_BATOCERA_TARGET_SM8250),y)
     ALLLINUXFIRMWARES_REMOVE_DIRS += $(@D)/qcom
 endif

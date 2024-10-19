@@ -92,7 +92,7 @@ msgstr ""
 "Vynutí vykreslování hry v tomto poměru stran. Ne všechny systémy podporují "
 "všechny poměry."
 
-#. TRANSLATION: shared, dolphin, flycast, mupen64plus, pcsx2, ...
+#. TRANSLATION: shared, dolphin, flycast, mupen64plus, pcsx2
 msgctxt "game_options"
 msgid "GAME ASPECT RATIO"
 msgstr "HERNÍ POMĚR STRAN"
@@ -3221,6 +3221,25 @@ msgctxt "game_options"
 msgid "2.5x (1600x1200)"
 msgstr "2.5x (1600x1200)"
 
+#. TRANSLATION: libretro/flycast, flycast/dolphin
+msgctxt "game_options"
+msgid ""
+"Enable the Dreamcast DSP for more accurate audio. Only recommended for fast "
+"systems."
+msgstr ""
+"Povolte Dreamcast DSP pro přesnější zvuk. Doporučeno pouze pro rychlé "
+"systémy."
+
+#. TRANSLATION: libretro/flycast, flycast/dolphin
+msgctxt "game_options"
+msgid "DIGITAL SOUND PROCESSOR"
+msgstr "DIGITÁLNÍ ZVUKOVÝ PROCESOR"
+
+#. TRANSLATION: libretro/flycast, libretro/mame, libretro/mame, cemu, cemu, ...
+msgctxt "game_options"
+msgid "Disabled (Default)"
+msgstr "Zakázáno (Výchozí)"
+
 #. TRANSLATION: libretro/flycast, libretro/pcsx_rearmed, flycast
 msgctxt "game_options"
 msgid "PLAYER 1 CROSSHAIR COLOR"
@@ -4295,11 +4314,6 @@ msgstr ""
 msgctxt "game_options"
 msgid "COIN SOUND PLUGIN"
 msgstr "ZVUKOVÝ PLUGIN PRO MINCE"
-
-#. TRANSLATION: libretro/mame, libretro/mame, cemu, cemu, cemu, ...
-msgctxt "game_options"
-msgid "Disabled (Default)"
-msgstr "Zakázáno (Výchozí)"
 
 #. TRANSLATION: libretro/mame, libretro/mamevirtual
 msgctxt "game_options"
@@ -5849,7 +5863,7 @@ msgctxt "game_options"
 msgid "JOYSTICK SENSITIVITY"
 msgstr "Citlivost joysticku"
 
-#. TRANSLATION: libretro/mupen64plus-next, libretro/parallel_n64
+#. TRANSLATION: libretro/mupen64plus-next, libretro/parallel_n64, dhewm3
 msgctxt "game_options"
 msgid "100% (Default)"
 msgstr "100 % (Výchozí)"
@@ -8461,7 +8475,7 @@ msgctxt "game_options"
 msgid "Keep Aspect Ration (Default)"
 msgstr "Zachovat Poměr Stran (Výchozí)"
 
-#. TRANSLATION: cemu, hypseus-singe, openbor, redream, demul
+#. TRANSLATION: cemu, hypseus-singe, openbor, redream
 msgctxt "game_options"
 msgid "Stretch"
 msgstr "Roztáhnout"
@@ -8574,7 +8588,7 @@ msgctxt "game_options"
 msgid "OpenGL (Default)"
 msgstr "OpenGL (Výchozí)"
 
-#. TRANSLATION: citra, dolphin, dolphin_triforce, duckstation, pcsx2
+#. TRANSLATION: citra, dolphin, dolphin_triforce, duckstation, melonds, ...
 msgctxt "game_options"
 msgid "Fix screen tearing. CPU heavy."
 msgstr "Oprava trhání obrazovky. Zatížení CPU."
@@ -9663,25 +9677,6 @@ msgctxt "game_options"
 msgid "CONTROLLER 4 FEATURE PACK"
 msgstr "BALÍČEK FUNKCÍ OVLADAČE  4"
 
-#. TRANSLATION: flycast/dolphin
-msgctxt "game_options"
-msgid ""
-"Enable the Dreamcast DSP for more accurate audio. Only recommended for fast "
-"systems."
-msgstr ""
-"Povolte Dreamcast DSP pro přesnější zvuk. Doporučeno pouze pro rychlé "
-"systémy."
-
-#. TRANSLATION: flycast/dolphin
-msgctxt "game_options"
-msgid "DIGITAL SOUND PROCESSOR"
-msgstr "DIGITÁLNÍ ZVUKOVÝ PROCESOR"
-
-#. TRANSLATION: flycast/dolphin, flycast
-msgctxt "game_options"
-msgid "Disbaled (Default)"
-msgstr "Vyvážený (Výchozí)"
-
 #. TRANSLATION: flycast
 msgctxt "game_options"
 msgid "Force the game to render in this aspect ratio."
@@ -9706,6 +9701,11 @@ msgstr "4.5x (2880x2160)"
 msgctxt "game_options"
 msgid "Rotate the screen with the emulator."
 msgstr "Otáčet obrazovkou pomocí emulátoru."
+
+#. TRANSLATION: flycast
+msgctxt "game_options"
+msgid "Disbaled (Default)"
+msgstr "Vyvážený (Výchozí)"
 
 #. TRANSLATION: flycast
 msgctxt "game_options"
@@ -9881,6 +9881,16 @@ msgstr "IDE (Výchozí)"
 msgctxt "game_options"
 msgid "ASCI"
 msgstr "ASCI"
+
+#. TRANSLATION: melonds
+msgctxt "game_options"
+msgid "OpenGL (Classic)"
+msgstr ""
+
+#. TRANSLATION: melonds
+msgctxt "game_options"
+msgid "OpenGL (Compute shader)"
+msgstr ""
 
 #. TRANSLATION: melonds
 msgctxt "game_options"
@@ -11898,7 +11908,7 @@ msgctxt "game_options"
 msgid "Choose your preferred aspect ratio."
 msgstr "Zvolte preferovaný poměr stran."
 
-#. TRANSLATION: redream, demul, bigpemu
+#. TRANSLATION: redream, bigpemu
 msgctxt "game_options"
 msgid "4:3 (Default)"
 msgstr "4:3 (výchozí)"
@@ -15130,6 +15140,21 @@ msgctxt "game_options"
 msgid "Anisotropic filtering"
 msgstr ""
 
+#. TRANSLATION: dhewm3
+msgctxt "game_options"
+msgid "Change the game's brightness."
+msgstr ""
+
+#. TRANSLATION: dhewm3
+msgctxt "game_options"
+msgid "BRIGHTNESS"
+msgstr ""
+
+#. TRANSLATION: dhewm3
+msgctxt "game_options"
+msgid "200% (Maximum)"
+msgstr ""
+
 #. TRANSLATION: steam.keys
 msgctxt "keys_files"
 msgid "Exit Steam"
@@ -15180,12 +15205,12 @@ msgctxt "keys_files"
 msgid "Skip cutscene"
 msgstr "Přeskočit scénu"
 
-#. TRANSLATION: iortcw.keys, triforce.dolphin_triforce.keys, psx.duckstation.keys, 3ds.citra.keys, psp.ppsspp.keys, ...
+#. TRANSLATION: iortcw.keys, triforce.dolphin_triforce.keys, psx.duckstation.keys, 3ds.citra.keys, doom3.dhewm3.keys, ...
 msgctxt "keys_files"
 msgid "Screenshot"
 msgstr "Snímek obrazovky"
 
-#. TRANSLATION: rott.keys, theforceengine.keys, dreamcast.redream.keys, cave3rd.demul.keys, dreamcast.demul.keys, ...
+#. TRANSLATION: rott.keys, theforceengine.keys, dreamcast.redream.keys, vpinball.keys, switch.ryujinx.keys, ...
 msgctxt "keys_files"
 msgid "Exit the emulator"
 msgstr "Ukončení emulátoru"
@@ -15405,12 +15430,12 @@ msgctxt "keys_files"
 msgid "Manage Staff"
 msgstr "Správa zaměstnanců"
 
-#. TRANSLATION: theforceengine.keys
+#. TRANSLATION: theforceengine.keys, doom3.dhewm3.keys
 msgctxt "keys_files"
 msgid "Quick Load"
 msgstr "Rychlé načtení"
 
-#. TRANSLATION: theforceengine.keys
+#. TRANSLATION: theforceengine.keys, doom3.dhewm3.keys
 msgctxt "keys_files"
 msgid "Quick Save"
 msgstr "Rychlé uložení"
@@ -15494,121 +15519,6 @@ msgstr "Rychle vpřed"
 msgctxt "keys_files"
 msgid "Service menu"
 msgstr ""
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Start"
-msgstr "Start"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Coin"
-msgstr "Mince"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Push 2"
-msgstr "Stisknout 2"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Push 1"
-msgstr "Stisknout 1"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Push 4"
-msgstr "Stisknout 4"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Push 3"
-msgstr "Stisknout 3"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Push 5"
-msgstr "Stisknout 5"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Push 6"
-msgstr "Stisknout 6"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Push 7"
-msgstr "Stisknout 7"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Push 8"
-msgstr "Stisknout 8"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Digital Left"
-msgstr "Digitál vlevo"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Digital Right"
-msgstr "Digitál vpravo"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Digital Up"
-msgstr "Digital nahoru"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Digital Down"
-msgstr "Digital dolů"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Analog 1 Left"
-msgstr "Analog 1 vlevo"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Analog 1 Right"
-msgstr "Analog 1 vpravo"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Analog 1 Up"
-msgstr "Analog 1 nahoru"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Analog 1 Down"
-msgstr "Analog 1 dolů"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Analog 2 Left"
-msgstr "Analog 2 vlevo"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Analog 2 Right"
-msgstr "Analog 2 vpravo"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Analog 2 Up"
-msgstr "Analog 2 nahoru"
-
-#. TRANSLATION: cave3rd.demul.keys, dreamcast.demul.keys, naomi.demul.keys, hikaru.demul.keys, gaelco.demul.keys, ...
-msgctxt "keys_files"
-msgid "Analog 2 Down"
-msgstr "Analog 2 dolů"
-
-#. TRANSLATION: hikaru.demul.keys, gaelco.demul.keys
-msgctxt "keys_files"
-msgid "Set to full screen"
-msgstr "Nastavení na celou obrazovku"
 
 #. TRANSLATION: amigacdtv.fsuae.keys, amigacd32.fsuae.keys, amiga500.fsuae.keys, amiga1200.fsuae.keys
 msgctxt "keys_files"
@@ -15889,6 +15799,98 @@ msgstr "Zapnutí/vypnutí filtrování grafiky"
 msgctxt "keys_files"
 msgid "Configuration menu"
 msgstr ""
+
+#~ msgctxt "keys_files"
+#~ msgid "Start"
+#~ msgstr "Start"
+
+#~ msgctxt "keys_files"
+#~ msgid "Coin"
+#~ msgstr "Mince"
+
+#~ msgctxt "keys_files"
+#~ msgid "Push 2"
+#~ msgstr "Stisknout 2"
+
+#~ msgctxt "keys_files"
+#~ msgid "Push 1"
+#~ msgstr "Stisknout 1"
+
+#~ msgctxt "keys_files"
+#~ msgid "Push 4"
+#~ msgstr "Stisknout 4"
+
+#~ msgctxt "keys_files"
+#~ msgid "Push 3"
+#~ msgstr "Stisknout 3"
+
+#~ msgctxt "keys_files"
+#~ msgid "Push 5"
+#~ msgstr "Stisknout 5"
+
+#~ msgctxt "keys_files"
+#~ msgid "Push 6"
+#~ msgstr "Stisknout 6"
+
+#~ msgctxt "keys_files"
+#~ msgid "Push 7"
+#~ msgstr "Stisknout 7"
+
+#~ msgctxt "keys_files"
+#~ msgid "Push 8"
+#~ msgstr "Stisknout 8"
+
+#~ msgctxt "keys_files"
+#~ msgid "Digital Left"
+#~ msgstr "Digitál vlevo"
+
+#~ msgctxt "keys_files"
+#~ msgid "Digital Right"
+#~ msgstr "Digitál vpravo"
+
+#~ msgctxt "keys_files"
+#~ msgid "Digital Up"
+#~ msgstr "Digital nahoru"
+
+#~ msgctxt "keys_files"
+#~ msgid "Digital Down"
+#~ msgstr "Digital dolů"
+
+#~ msgctxt "keys_files"
+#~ msgid "Analog 1 Left"
+#~ msgstr "Analog 1 vlevo"
+
+#~ msgctxt "keys_files"
+#~ msgid "Analog 1 Right"
+#~ msgstr "Analog 1 vpravo"
+
+#~ msgctxt "keys_files"
+#~ msgid "Analog 1 Up"
+#~ msgstr "Analog 1 nahoru"
+
+#~ msgctxt "keys_files"
+#~ msgid "Analog 1 Down"
+#~ msgstr "Analog 1 dolů"
+
+#~ msgctxt "keys_files"
+#~ msgid "Analog 2 Left"
+#~ msgstr "Analog 2 vlevo"
+
+#~ msgctxt "keys_files"
+#~ msgid "Analog 2 Right"
+#~ msgstr "Analog 2 vpravo"
+
+#~ msgctxt "keys_files"
+#~ msgid "Analog 2 Up"
+#~ msgstr "Analog 2 nahoru"
+
+#~ msgctxt "keys_files"
+#~ msgid "Analog 2 Down"
+#~ msgstr "Analog 2 dolů"
+
+#~ msgctxt "keys_files"
+#~ msgid "Set to full screen"
+#~ msgstr "Nastavení na celou obrazovku"
 
 #~ msgctxt "game_options"
 #~ msgid "PS3 CONTROLLER 1"

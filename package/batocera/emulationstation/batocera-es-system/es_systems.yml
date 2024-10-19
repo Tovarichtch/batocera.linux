@@ -431,8 +431,6 @@ dreamcast:
       flycast:        { requireAnyOf: [BR2_PACKAGE_FLYCAST]          }
     redream:
       redream:        { requireAnyOf: [BR2_PACKAGE_REDREAM]          }
-    demul:
-      demul:          { requireAnyOf: [BR2_PACKAGE_DEMUL]            }
   comment_en: |
     For more info: https://wiki.batocera.org/systems:dreamcast
   comment_fr: |
@@ -453,8 +451,6 @@ naomi:
       flycastvl:    { requireAnyOf: [BR2_PACKAGE_LIBRETRO_FLYCASTVL] }
     flycast:
       flycast:  { requireAnyOf: [BR2_PACKAGE_FLYCAST]           }
-    demul:
-      demul:    { requireAnyOf: [BR2_PACKAGE_DEMUL]             }
 
 atomiswave:
   name:       Atomiswave
@@ -469,8 +465,6 @@ atomiswave:
       flycastvl:    { requireAnyOf: [BR2_PACKAGE_LIBRETRO_FLYCASTVL] }
     flycast:
       flycast: { requireAnyOf: [BR2_PACKAGE_FLYCAST]          }
-    demul:
-      demul:   { requireAnyOf: [BR2_PACKAGE_DEMUL]            }
 
 systemsp:
   name:       Sega System SP
@@ -834,29 +828,34 @@ devilutionx:
 
     Place diabdat.mpq from your CD or GoG installation into:
 
-        /userdata/roms/devilution/
+        /userdata/roms/devilutionx/
 
     For Hellfire, also copy hellfire.mpq, hfmonk.mpq, hfmusic.mpq, and hfvoice.mpq.
 
     For Chinese, Japanese, and Korean text support copy:
-    https://github.com/diasurgical/devilutionx-assets/releases/download/v1/fonts.mpq
+    https://github.com/diasurgical/devilutionx-assets/releases/download/v4/fonts.mpq
 
-    For the Polish voice pack copy:
-    https://github.com/diasurgical/devilutionx-assets/releases/download/v1/pl.mpq
+    Voice packs:
+    * Polish: https://github.com/diasurgical/devilutionx-assets/releases/download/v4/pl.mpq
+    * Russian: https://github.com/diasurgical/devilutionx-assets/releases/download/v4/ru.mpq
+    * Spanish: https://github.com/diasurgical/devilutionx-assets/releases/download/v4/es.mpq
   comment_br: |
     Diablo 1.
 
     Coloque o arquivo diabdat.mpq do seu CD ou instalação do GoG em:
 
-        /userdata/roms/devilution/
+        /userdata/roms/devilutionx/
 
     Para Hellfire, copie também hellfire.mpq, hfmonk.mpq, hfmusic.mpq e hfvoice.mpq.
 
     Para cópia de suporte de texto em chinês, japonês e coreano:
-    https://github.com/diasurgical/devilutionx-assets/releases/download/v1/fonts.mpq
+    https://github.com/diasurgical/devilutionx-assets/releases/download/v4/fonts.mpq
 
-    Para a cópia do pacote de voz em polonês:
-    https://github.com/diasurgical/devilutionx-assets/releases/download/v1/pl.mpq
+    Pacotes de voz:
+    * Polonês: https://github.com/diasurgical/devilutionx-assets/releases/download/v4/pl.mpq
+    * Russo: https://github.com/diasurgical/devilutionx-assets/releases/download/v4/ru.mpq
+    * Espanhol: https://github.com/diasurgical/devilutionx-assets/releases/download/v4/es.mpq
+
 
 fbneo:
   name:       Final Burn Neo
@@ -1302,6 +1301,16 @@ pyxel:
     Fantasy console with many games available from https://github.com/kitao/pyxel/wiki/Pyxel-User-Examples
   comment_fr: |
     Une fantasy console avec plein de jeux disponibles sur https://github.com/kitao/pyxel/wiki/Pyxel-User-Examples
+
+vircon32:
+  name:       vircon32
+  manufacturer: Fantasy
+  release: 2022
+  hardware: console
+  extensions: [v32, zip]
+  emulators:
+    libretro:
+      vircon32: { requireAnyOf: [BR2_PACKAGE_LIBRETRO_VIRCON32] }
 
 channelf:
   name:       Channel-F
@@ -1929,7 +1938,22 @@ jaguar:
   release: 1993
   hardware: console
   extensions: [cue, j64, jag, cof, abs, cdi, rom, zip, 7z]
+  group: jaguar
   theme: atarijaguar
+  emulators:
+    libretro:
+      virtualjaguar: { requireAnyOf: [BR2_PACKAGE_LIBRETRO_VIRTUALJAGUAR], incompatible_extensions: [zip, 7z] }
+    bigpemu:
+      bigpemu: { requireAnyOf: [BR2_PACKAGE_BIGPEMU] }
+
+jaguarcd:
+  name: Jaguar CD
+  manufacturer: Atari
+  release: 1995
+  hardware: console
+  extensions: [cue, cdi, zip, 7z]
+  group: jaguar
+  theme: atarijaguarcd
   emulators:
     libretro:
       virtualjaguar: { requireAnyOf: [BR2_PACKAGE_LIBRETRO_VIRTUALJAGUAR], incompatible_extensions: [zip, 7z] }
@@ -3845,8 +3869,6 @@ naomi2:
       flycast: { requireAnyOf: [BR2_PACKAGE_LIBRETRO_FLYCAST] }
     flycast:
       flycast: { requireAnyOf: [BR2_PACKAGE_FLYCAST]          }
-    demul:
-      demul:   { requireAnyOf: [BR2_PACKAGE_DEMUL]            }
   comment_en: |
     ---------------------------------
     ## NAOMI 2 IMPORTANT INFO ##
@@ -4803,23 +4825,49 @@ psvita:
 
     Consulte o wiki - https://wiki.batocera.org/playground:systems:psvita
 
-boom3:
-  name: Boom3
+doom3:
+  name: Doom 3
   manufacturer: Ports
   release: 2004
   hardware: port
-  extensions: [boom3]
+  extensions: [d3]
   platform: pc
   group: ports
   emulators:
+    dhewm3:
+      dhewm3: { requireAnyOf: [BR2_PACKAGE_DHEWM3] }
     libretro:
       boom3: { requireAnyOf: [BR2_PACKAGE_LIBRETRO_BOOM3] }
   comment_en: |
-    For more info: https://wiki.batocera.org/systems:boom3
+    Add your Doom 3 (and if you have the Resurrection of Evil mod) pk4 files here like so:
+
+    └── roms/
+        └── doom3/
+            ├── base/
+            │   ├── pak000.pk4
+            │   ├── pak001.pk4
+            │   ├── pak002.pk4
+            │   ├── pak003.pk4
+            │   ├── pak004.pk4
+            │   ├── pak005.pk4
+            │   ├── pak006.pk4
+            │   ├── pak007.pk4
+            │   └── pak008.pk4
+            └── d3xp/
+                ├── pak000.pk4 
+                └── pak001.pk4
+    
+    Create a `Doom 3.d3` file in the roms/doom3 directory. 
+    If you have the Resurrection of Evil mod then Create a `Doom 3 - Resurrection of Evil.d3` file too.
+
+    The `Doom 3.d3` file should contain the path to the base game. - i.e. base/pak000.pk4
+    Similarly `Doom 3 - Resurrection of Evil.d3` should be - d3xp/pak000.pk4
+    
+    For more info: https://wiki.batocera.org/systems:doom3
   comment_fr: |
-    Trouvez la documentation ici: https://wiki.batocera.org/systems:boom3
+    Trouvez la documentation ici: https://wiki.batocera.org/systems:doom3
   comment_br: |
-    Para mais informações: https://wiki.batocera.org/systems:boom3
+    Para mais informações: https://wiki.batocera.org/systems:doom3
 
 reminiscence:
   name: REminiscence
@@ -5413,13 +5461,13 @@ commanderx16:
     If you have a game without an appropriate extension you can create a .BAS file with DOS commands.
     i.e. in the game folder create a PLANETX16.BAS file.
     Then add into the file the DOS commands to load the game, like so...
-    
+
     LOAD "PLANETX16"
     RUN
 
     If you have an .IMG file which doesn't load then create an autorun.cmd file with the DOS commands also.
     i.e. X16 Wars would contain the following...
-    
+
     LOAD "WARS.PRG"
     ...
     RUN
@@ -5429,3 +5477,33 @@ commanderx16:
     Trouvez la documentation ici: https://wiki.batocera.org/systems:commanderx16
   comment_br: |
     Para mais informações: https://wiki.batocera.org/systems:commanderx16
+
+ps4:
+  name: PlayStation 4
+  manufacturer: Sony
+  release: 2013
+  hardware: console
+  extensions: [ps4]
+  emulators:
+    shadps4:
+      shadps4: { requireAnyOf: [BR2_PACKAGE_SHADPS4] }
+  comment_en: |
+    Do not attempt to use this emulator unless you have a jailbroken PS4 console with back-up games.
+    PS4 emulation is very experiemental & required a high specified x86_64 PC.
+
+    Before you can play a game you must install the game via the associated .PKG file of your backed-up game using the F1 menu.
+    Then in the new installation directory for the installed game, create a file with a .ps4 extension so EmularionStation will see it.
+    i.e. /userdata/roms/ps4/CUSA03173/Bloodborne.ps4
+    
+    Then you can launch the game from EmulationStation accordingly.
+
+    DLC content will be stored in: /userdata/roms/ps4/DLC
+
+    Very important: To play games you typically need the system modules from your PS4 that has been jailbroken.
+    Place the decrypted system module files in: /userdata/system/configs/shadps4/user/sys_modules
+
+    For more info: https://wiki.batocera.org/systems:ps4
+  comment_fr: |
+    Trouvez la documentation ici : https://wiki.batocera.org/systems:ps4
+  comment_br: |
+    Para mais informações: https://wiki.batocera.org/systems:ps4
