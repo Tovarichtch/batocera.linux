@@ -1,4 +1,28 @@
-# 2025/09/xx - Batocera.linux 42 - Papilio Ulysses
+# 2026/xx/xx - Batocera.linux 43 - Glasswing
+### Special Notes
+
+### Hardware
+
+### Added
+
+### Fixed
+- Not being able to exit emulator on first controller disconnection. i.e. Bluetooth disconnects.
+
+### Changed / Improved
+
+### Updated
+- Azahar Plus to AZAHAR_PLUS_2123_2_A
+- RPCS3 to v0.0.38
+- ShadPS4 Plus to SHAD_PS4_PLUS_0_11_0
+
+### System
+- Linux Kernel to 6.17.1
+- LLVM Project to 20.1.8
+- Mesa3D to 25.2.4
+- Nvidia production drivers to 580.95.05
+- Vulkan stack to 1.4.328.1
+
+# 2025/10/xx - Batocera.linux 42 - Papilio Ulysses
 ### Special Notes
 - Quake 1 & 2 ROMs need moving from tyrquake to quake & vitaquake2 to quake2 folders respectively
   See the _info.txt file for directory layouts & ES file launcher naming conventions.
@@ -143,7 +167,7 @@
 - libretro-Wasm4 to v2.7.1
 - melonDS to 17th Jan build
 - OpenMSX to release 20.0
-- PCSX2 to v2.3.420
+- PCSX2 to v2.4.0
 - Play! to 4th Feb build
 - PPSSPP to v1.19.3
 - Play! to 0.70

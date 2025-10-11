@@ -6,7 +6,7 @@
 
 BATOCERA_SYSTEM_SOURCE=
 
-BATOCERA_SYSTEM_VERSION = 42
+BATOCERA_SYSTEM_VERSION = 43-dev
 BATOCERA_SYSTEM_DATE_TIME = $(shell date "+%Y/%m/%d %H:%M")
 BATOCERA_SYSTEM_DATE = $(shell date "+%Y/%m/%d")
 BATOCERA_SYSTEM_DEPENDENCIES = tzdata
@@ -124,6 +124,10 @@ define BATOCERA_SYSTEM_INSTALL_TARGET_CMDS
 	    $(TARGET_DIR)/etc/profile.d/xdg.sh
 	cp $(BR2_EXTERNAL_BATOCERA_PATH)/package/batocera/core/batocera-system/dbus.sh \
 	    $(TARGET_DIR)/etc/profile.d/dbus.sh
+
+	# not really needed for xorg
+	cp $(BR2_EXTERNAL_BATOCERA_PATH)/package/batocera/core/batocera-system/wayland.sh \
+	    $(TARGET_DIR)/etc/profile.d/wayland.sh
 
 	# list of modules that doesnt like suspend
 	mkdir -p $(TARGET_DIR)/etc/pm/config.d
