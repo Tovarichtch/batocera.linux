@@ -1,28 +1,50 @@
-# 2026/xx/xx - Batocera.linux 43 - Glasswing
+# 2026/xx/xx - batocera.linux 43 - Glasswing
 ### Special Notes
-
+- x86_64 Handhelds with AMD and Intel graphics will be supported on the preferred x86-64-v3 image using Wayland and the LabWC compositor.
+  Desktop devices should continue to use the x86-64 image with Xorg.
+  Note: Nvidia drivers are currently not included in the x86-64-v3 image.
+- The ability to use a custom.sh script is deprecated in this version. If you already used such a script, then it will be one time transformed into a service.
+  Please use the services for future scripts and refer to our [Wikipedia](https://wiki.batocera.org/scripting_services_rules_examples)
+- TheXTech update in v43 needs minimum of 1.3.7 assets, ensure you update accordingly.
 ### Hardware
-
+- Odin 2 Mini initial support
 ### Added
-
+- LED colour control for Arm based handhelds
+- The ability to turn the controller LED's off
+- batocera-xtract for handling archives, systems with pcmanFM filemanager can use a small GUI and mouse context menus
 ### Fixed
 - Not being able to exit emulator on first controller disconnection. i.e. Bluetooth disconnects.
-
+- Odin 2 variants wifi not working in some regions
+- Wifi country not being applied at boot
 ### Changed / Improved
-
+- Wifi country can now be chosen under the Network Setting option.
+  This improves Wifi connectivity by aligning your device with regional regulations as well as 6GHz band support.
 ### Updated
-- Azahar Plus to AZAHAR_PLUS_2123_2_A
+- Azahar Plus to AZAHAR_PLUS_2123_3_A
+- Groovy MAME to 0.281
+- Hatari to v2.6.1
+- Jazz2 to 3.4.0
+- Libretro MAME to 0.281
+- Libretro Play! to 0.71
+- Play! to 0.71
 - RPCS3 to v0.0.38
 - ShadPS4 Plus to SHAD_PS4_PLUS_0_11_0
-
+- Taradino to 20250816
+- TheXTech to v1.3.7.1-2
+- TheForceEngine to v1.22.420
+- Xemu to v0.8.106
+- Ymir to 0.2.0
 ### System
+- Bluez to 5.84
+- GStreamer codecs to 1.26.6
+- Linux Firmware to 20251011
 - Linux Kernel to 6.17.1
 - LLVM Project to 20.1.8
 - Mesa3D to 25.2.4
 - Nvidia production drivers to 580.95.05
 - Vulkan stack to 1.4.328.1
 
-# 2025/10/xx - Batocera.linux 42 - Papilio Ulysses
+# 2025/10/12 - batocera.linux 42 - Papilio Ulysses
 ### Special Notes
 - Quake 1 & 2 ROMs need moving from tyrquake to quake & vitaquake2 to quake2 folders respectively
   See the _info.txt file for directory layouts & ES file launcher naming conventions.
