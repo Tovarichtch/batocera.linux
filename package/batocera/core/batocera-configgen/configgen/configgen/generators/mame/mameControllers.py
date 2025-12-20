@@ -95,13 +95,14 @@ def generatePadsConfig(cfgPath: Path, playersControllers: Controllers, sysName: 
     if useGuns:
         removeSection(config, xml_system, "video")
         xml_video = config.createElement("video")
-        xml_system.appendChild(xml_video)
         
         xml_target = config.createElement("target")
         xml_target.setAttribute("index", "0")
         xml_target.setAttribute("keepaspect", "0")  # Disable aspect ratio correction
         xml_target.setAttribute("unevenstretch", "1")  # Allow uneven stretching
         xml_video.appendChild(xml_target)
+        
+        xml_system.appendChild(xml_video)
 
     removeSection(config, xml_system, "input")
     xml_input = config.createElement("input")
