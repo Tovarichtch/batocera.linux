@@ -218,10 +218,7 @@ class MameGenerator(Generator):
             commandArray += [ "-modesetting" ]
             commandArray += [ "-readconfig" ]
         else:
-            # For lightgun games, let MAME handle resolution automatically to preserve native aspect ratio
-            # Setting explicit resolution causes MAME to force 4:3 aspect ratio on non-4:3 games
-            if not system.config.use_guns:
-                commandArray += [ "-resolution", f"{gameResolution['width']}x{gameResolution['height']}" ]
+            commandArray += [ "-resolution", f"{gameResolution['width']}x{gameResolution['height']}" ]
 
         # Refresh rate options to help with screen tearing
         # syncrefresh is unlisted, it requires specific display timings and 99.9% of users will get unplayable games.
