@@ -219,6 +219,11 @@ class MameGenerator(Generator):
             commandArray += [ "-readconfig" ]
         else:
             commandArray += [ "-resolution", f"{gameResolution['width']}x{gameResolution['height']}" ]
+            # For lightgun games, disable aspect ratio correction to ensure proper coordinate mapping
+            # This allows the game to stretch to fill the target resolution, ensuring lightgun accuracy
+            if system.config.use_guns:
+                commandArray += [ "-unevenstretch" ]
+                commandArray += [ "-nokeepaspect" ]
 
         # Refresh rate options to help with screen tearing
         # syncrefresh is unlisted, it requires specific display timings and 99.9% of users will get unplayable games.
