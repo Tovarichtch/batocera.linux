@@ -218,11 +218,13 @@ class MameGenerator(Generator):
             commandArray += [ "-modesetting" ]
             commandArray += [ "-readconfig" ]
         else:
-            # For lightgun games on LCD, enable changeres to allow proper resolution handling
-            # This ensures the game can use its native aspect ratio for accurate coordinate mapping
-            if system.config.use_guns:
-                commandArray += [ "-changeres" ]
             commandArray += [ "-resolution", f"{gameResolution['width']}x{gameResolution['height']}" ]
+            # For lightgun games on LCD, prevent config files from overriding aspect ratio settings
+            # and disable aspect ratio keeping to stretch to full screen
+            if system.config.use_guns:
+                commandArray += [ "-noreadconfig" ]
+                commandArray += [ "-nokeepaspect" ]
+                commandArray += [ "-unevenstretch" ]
 
         # Refresh rate options to help with screen tearing
         # syncrefresh is unlisted, it requires specific display timings and 99.9% of users will get unplayable games.
