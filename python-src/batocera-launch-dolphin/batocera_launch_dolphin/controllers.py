@@ -320,6 +320,10 @@ def generate_controller_config_gamecube(
 def generate_controller_config_triforce(
     emulator: Emulator, players_controllers: Controllers, wheels: DeviceInfoMapping, rom: Path, /
 ) -> None:
+    service_buttons = (
+        {'l3': 'Triforce/Service', 'r3': 'Triforce/Test'} if emulator.config.get_bool('dolphin_service_buttons') else {}
+    )
+
     # Based on GameCube mapping but with arcade specific overrides
     triforce_mapping: dict[str, str | None] = {
         'a': 'Buttons/B',
@@ -341,6 +345,7 @@ def generate_controller_config_triforce(
         'joystick2up': 'C-Stick/Up',
         'joystick2left': 'C-Stick/Left',
         'hotkey': None,
+        **service_buttons,
     }
     triforce_reverse_axes: dict[str | None, str] = {
         'Main Stick/Up': 'Main Stick/Down',
@@ -375,6 +380,7 @@ def generate_controller_config_triforce(
         'joystick1left': 'Main Stick/Left',  # Steering
         'pageup': 'Buttons/X',  # Paddle left
         'pagedown': 'Buttons/Y',  # Paddle right
+        **service_buttons,
     }
     wheel_triforce_reverse_axes: dict[str | None, str] = {'Main Stick/Left': 'Main Stick/Right'}
     wheel_triforce_extra_options: dict[str, str] = {'Main Stick/Dead Zone': '0.'}
