@@ -99,6 +99,8 @@ class MednafenPsx(RACore):
         # Analog Stick self calibration
         set_option('analog_calibration', 'enabled')
 
+        set_option_from_config('gun_cursor', default='cross' if self.emulator.guns_need_crosses else 'off')
+
         # Multitap
         match self.config.get('multitap_mednafen'):
             case 'port1':

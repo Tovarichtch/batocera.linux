@@ -1,0 +1,79 @@
+--- a/input.c
++++ b/input.c
+@@ -26,6 +26,7 @@
+ static bool enable_analog_calibration = false;
+ static int32_t mouse_sensitivity_q16 = (1 << 16); /* 1.0 in Q16 */
+ static int gun_cursor = SETTING_GUN_CROSSHAIR_CROSS;
++float gun_crosshair[ MAX_CONTROLLERS ][ 2 ] = { { -1.0f }, { -1.0f } };
+ 
+ int gun_input_mode = SETTING_GUN_INPUT_LIGHTGUN;
+ 
+@@ -749,6 +750,8 @@
+ 
+       gun_x = (( ( gun_x_raw + 0x7fff ) * scale_x ) / (0x7fff << 1)) + (crop_overscan ? 120 : 0);
+       gun_y = ( ( gun_y_raw + 0x7fff ) * scale_y ) / (0x7fff << 1) + (content_is_pal ? 4 : 0);
++      gun_crosshair[ iplayer ][ 0 ] = gun_cursor ? ( gun_x_raw + 0x7fff ) / 65534.0f : -1.0f;
++      gun_crosshair[ iplayer ][ 1 ] = ( gun_y_raw + 0x7fff ) / 65534.0f;
+    }
+ 
+    /*  position */
+@@ -792,6 +795,7 @@
+    for (iplayer = 0; iplayer < players; ++iplayer )
+    {
+       INPUT_DATA* p_input = &(input_data[ iplayer ]);
++      gun_crosshair[ iplayer ][ 0 ] = -1.0f;
+ 
+       switch ( input_type[ iplayer ] )
+       {
+--- a/rhi/rhi_lib_gl.c
++++ b/rhi/rhi_lib_gl.c
+@@ -22,6 +22,7 @@
+ #include "rhi_defer.h"
+ #include "tt_trace.h"
+ #include "beetle_psx_globals.h"
++#include "mednafen/settings.h"
+ 
+ /* HDR output state, owned by libretro.c (same contract as the Vulkan
+  * renderer's extern block). psx_color_format records the *requested*
+@@ -43,6 +44,7 @@
+ extern int   psx_pgxp_color;   /* PGXP precise colour: vertex colour may exceed 1.0 on fp16 */
+ extern int   psx_pgxp_fog;     /* PGXP linear-light depth cue; effective only with precise colour */
+ extern int   psx_src_primaries;
++extern float gun_crosshair[8][2];
+ 
+ /* fp16 render targets are core on desktop GL 3.0+; GLES3 needs an
+  * extension to make them color-renderable. When unavailable, fb_out
+@@ -6246,6 +6248,7 @@
+    unsigned          analog_out_h    = 0;
+    int               analog_dst_x    = 0;
+    int               analog_dst_y    = 0;
++   unsigned          i;
+ 
+    /* Setup 2 triangles that cover the entire framebuffer
+       then copy the displayed portion of the screen from fb_out */
+@@ -6433,6 +6436,25 @@
+       }
+    }
+ 
++   for (i = 0; i < 2; i++)
++   {
++      GLint s = renderer->internal_upscaling;
++      GLint x = gun_crosshair[i][0] * renderer->frontend_resolution[0];
++      GLint y = (1.0f - gun_crosshair[i][1]) * renderer->frontend_resolution[1];
++      int   c = i ? setting_crosshair_color_p2 : setting_crosshair_color_p1;
++
++      if (gun_crosshair[i][0] < 0.0f)
++         continue;
++
++      glEnable(GL_SCISSOR_TEST);
++      glClearColor(((c >> 16) & 0xFF) / 255.0f, ((c >> 8) & 0xFF) / 255.0f, (c & 0xFF) / 255.0f, 1.0f);
++      glScissor(x - 8 * s, y, 17 * s, s);
++      glClear(GL_COLOR_BUFFER_BIT);
++      glScissor(x, y - 8 * s, s, 17 * s);
++      glClear(GL_COLOR_BUFFER_BIT);
++      glDisable(GL_SCISSOR_TEST);
++   }
++
+    /* TODO - Hack: copy fb_out back into fb_texture at the end of every
+     * frame to make offscreen rendering kinda sorta work. Very messy
+     * and slow. */

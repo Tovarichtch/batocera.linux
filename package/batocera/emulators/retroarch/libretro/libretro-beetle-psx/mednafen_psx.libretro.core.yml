@@ -123,6 +123,13 @@ custom_features:
       NeGcon (Rumble): 1285
       Justifier: 516
       PlayStation Mouse: 258
+  beetle_psx_hw_gun_cursor:
+    group: LIGHT GUN
+    prompt: LIGHT GUN CROSSHAIR
+    description: Not shown with the Vulkan video driver.
+    choices:
+      Cross: cross
+      Disabled: 'off'
 file_extensions:
   - cue
   - img
